@@ -1,0 +1,161 @@
+{
+    "Zone": {
+        "xleft": 0.0,
+        "ytop": 1.0,
+        "xright": 1.0,
+        "ybottom": 0.0,
+        "zback": 0.0,
+        "zfront": 0.0
+    },
+    "BCs": {
+        "Back": {
+            "Robin":
+            {
+                "alphaUx":0,
+                "betaUx":0,
+                "Ux": 0,
+                "alphaUy":0,
+                "betaUy":0,
+                "Uy": 0,
+                "alphaUz":0,
+                "betaUz":0,
+                "Uz": 0,
+                "alphaP":0,
+                "betaP":0,
+                "P": 0,
+                "gUx":0,
+                "gUy":0,
+                "gUz":0
+            }
+        },
+        "Front": {
+            "Robin":
+            {
+                "alphaUx":0,
+                "betaUx":0,
+                "Ux": 0,
+                "alphaUy":0,
+                "betaUy":0,
+                "Uy": 0,
+                "alphaUz":0,
+                "betaUz":0,
+                "Uz": 0,
+                "alphaP":0,
+                "betaP":0,
+                "P": 0,
+                "gUx":0,
+                "gUy":0,
+                "gUz":0
+            }
+        },
+        "Left": {
+            "Robin":
+            {
+                "alphaUx":0,
+                "betaUx":1,
+                "Ux": 0,
+                "alphaUy":1,
+                "betaUy":0,
+                "Uy": 0,
+                "alphaUz":0,
+                "betaUz":0,
+                "Uz": 0,
+                "alphaP":1,
+                "betaP":0,
+                "P": 0,
+                "gUx":0,
+                "gUy":0,
+                "gUz":0
+            }
+        },
+        "Right": {
+            "Robin":
+            {
+                "alphaUx":0,
+                "betaUx":1,
+                "Ux": 0,
+                "alphaUy":1,
+                "betaUy":0,
+                "Uy": 0,
+                "alphaUz":0,
+                "betaUz":0,
+                "Uz": 0,
+                "alphaP":1,
+                "betaP":0,
+                "P": 0,
+                "gUx":0,
+                "gUy":0,
+                "gUz":0
+            }
+        },
+        "Top": {
+            "Robin":
+            {
+                "alphaUx":1,
+                "betaUx":0,
+                "Ux": 1,
+                "alphaUy":1,
+                "betaUy":0,
+                "Uy": 0,
+                "alphaUz":0,
+                "betaUz":0,
+                "Uz": 0,
+                "alphaP":0,
+                "betaP":1,
+                "P": 0,
+                "gUx":0,
+                "gUy":0,
+                "gUz":0
+            }
+        },
+        "Bottom": {
+            "Robin":
+            {
+                "alphaUx":1,
+                "betaUx":0,
+                "Ux": 0,
+                "alphaUy":1,
+                "betaUy":0,
+                "Uy": 0,
+                "alphaUz":0,
+                "betaUz":0,
+                "Uz": 0,
+                "alphaP":0,
+                "betaP":1,
+                "P": 0,
+                "gUx":0,
+                "gUy":0,
+                "gUz":0
+            }
+        },
+        "Tw": 270,
+        "rho": 1
+    },
+    "ICs": {
+        "Ux": 0,
+        "Uy": 0,
+        "Uz": 0,
+        "T": 270,
+        "rho": 0.2203
+    },
+    "Constants": {
+        "R": 208,
+        "alpha": 6
+    },
+    "Parameters": {
+        "ndim":2,
+        "d": 0.368e-9,
+        "tao": 1e-3,
+        "dt": 1e-4,
+        "tfinal": 1,
+        "r": 0.5e-6,
+        "rb": 0.8e-6,
+        "Nx": 21,
+        "Ny": 21,
+        "Nz": 1,
+        "saveFreq": 50,
+        "radiusFactor": 3.5,
+        "VMax" : 15,
+        "VMin":-15
+    }
+}
