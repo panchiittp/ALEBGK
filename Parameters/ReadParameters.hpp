@@ -217,7 +217,14 @@ void readparameters()
     Param.dt = jsonData["Parameters"]["dt"];
     Param.tfinal = jsonData["Parameters"]["tfinal"];
     Param.r = jsonData["Parameters"]["r"];
-       
+    Param.Nv = jsonData["Parameters"]["Nv"];
+    Param.VMax = jsonData["Parameters"]["VMax"];
+    Param.VMin = jsonData["Parameters"]["VMin"];
+    Param.rb = jsonData["Parameters"]["rb"];
+    Param.radiusFactor = jsonData["Parameters"]["radiusFactor"];
+    Param.saveFreq = jsonData["Parameters"]["saveFreq"];
+
+
     
     Param.radiusFactor = jsonData["Parameters"]["radiusFactor"];
     Param.saveFreq = jsonData["Parameters"]["saveFreq"];  // save results every saveFreq time steps.

@@ -61,7 +61,7 @@ void SaveParticleForMatlab(const std::string &filename, BGKParticle *particles, 
     //file << "POINTS " << numParticles << " float" << std::endl;
     for (int i = 0; i < numParticles; ++i)
     {
-        file << particles[i].x << " " << particles[i].y << " " << particles[i].z << std::endl;
+        file << particles[i].x << " " << particles[i].y << " " << particles[i].z << " " << particles[i].ux  << " " << particles[i].uy << std::endl;
     }
     file.close();
     std::cout << "Particle Saved for MATLAB: " << filename << std::endl;
@@ -86,5 +86,29 @@ void SaveNeighbourParticleForMatlab(const std::string &filename, BGKParticle *pa
     std::cout << "Neighbour Particle Saved for MATLAB: " << filename << std::endl;
 
 }
+
+void SavePeriodicNeighbourParticleForMatlab(const std::string &filename, BGKParticle *particles, int numParticles,int ind,int neightype)
+{
+    std::ofstream file(filename);
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return;
+    }
+    //file << "POINTS " << numParticles << " float" << std::endl;
+    for (int i = 0; i < particles[ind].totneigh; ++i)
+    {
+        int k=particles[ind].neighindex[i];
+        for(int s=3*i;s<3*(i+1);s++)
+            if(particles[ind].neightype[s]==neightype)
+                file << particles[k].x << " " << particles[k].y << " " << particles[k].z << std::endl;
+    }
+
+    
+    file.close();
+    std::cout << "Periodic Neighbour Particle Saved for MATLAB: " << filename << std::endl;
+
+}
 #include "WriteToCSV.hpp"
 #endif
+

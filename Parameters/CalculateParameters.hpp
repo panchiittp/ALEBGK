@@ -1,5 +1,5 @@
-#ifndef CALCULATEPARAMETERS_H
-#define CALCULATEPARAMETERS_H
+#ifndef CALCULATEPARAMETERS_HPP
+#define CALCULATEPARAMETERS_HPP
 
 /*This function calculates the parameters such as
 dx - distance between adjacent particles in x direction

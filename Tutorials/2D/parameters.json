@@ -153,6 +153,7 @@
         "Nx": 21,
         "Ny": 21,
         "Nz": 1,
+        "Nv":21,
         "saveFreq": 50,
         "radiusFactor": 3.5,
         "VMax" : 15,

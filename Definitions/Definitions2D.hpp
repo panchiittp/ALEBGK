@@ -32,12 +32,14 @@ struct BGKParticle
     int voxel, totvoxel, totneigh; // Linear index of the voxel in the 2D grid in which the particle is residing
     int neighVoxel[27];            // neighbouring voxels
     int neighindex[250];
-    int neightype[3*250];   //Each particle can be a neighbour of a particle in only 3 ways (maximum).
+    int neightype[3*250];   //Each particle can be a neighbour of a particle in only 2 ways (maximum).
     bool active;
-    double MTW[2500];
-    double MTWM[55];
+    double MTW[6*250];
+    double MTWM[21];
     double gWENO[7*10]; //First 10 for Center, next 10 for Left, then Right, Bottom, Top, Front, Back.
     double rhs[250];
+    int neighcount[6];
+    int checkvariable;
 //    Point nor[180], tgt[180], binor[180];//,wdiff[180]; //dx,dy,dz, Normal: nx,ny,nz,Tangent: tx,ty,tz, Binormal: bx,by,bz, wdx,wdy,wdz
 //    Angle anglebar[180];
     
