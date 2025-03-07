@@ -1,7 +1,7 @@
 #ifndef INTERPOLATION_HPP
 #define INTERPOLATION_HPP
 
-__device__ int index(int i, int j,int N)
+__device__ __host__ int index(int i, int j,int N)
 {
     if(j>=i)
     {
@@ -12,7 +12,7 @@ __device__ int index(int i, int j,int N)
         return N*j+i-j*(j+1)/2;
     }
 }
-__device__ void SymmetricInverseJordan(int p,BGKParticle *dP)
+__device__ __host__ void SymmetricInverseJordan(int p,BGKParticle *dP)
 {
     int N=6;
     double A[6][6];
@@ -22,14 +22,17 @@ __device__ void SymmetricInverseJordan(int p,BGKParticle *dP)
             A[i][j] = dP[p].MTWM[index(i,j,N)];
         }
     }
-    __syncthreads();
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             invA[i][j] = (i == j) ? 1.0 : 0.0;
         }
     }
-    __syncthreads();
-    // Perform Gauss-Jordan elimination
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif    // Perform Gauss-Jordan elimination
     for (int i = 0; i < N; i++) {
         double diag = A[i][i]; // Pivot element
 
@@ -50,13 +53,17 @@ __device__ void SymmetricInverseJordan(int p,BGKParticle *dP)
             }
         }
     }
-    __syncthreads();
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif    
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             dP[p].MTWM[index(i,j,N)]=invA[i][j];
         }
     }
-    __syncthreads();
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif
 }
 
 // __device__ void SymmetricInverseCholesky(int p, BGKParticle *dP)
@@ -159,7 +166,7 @@ __device__ void SymmetricInverseJordan(int p,BGKParticle *dP)
 // }
 
 
-__device__ void MatrixMatrixMul(int p, BGKParticle *dP,int flag)
+__device__ __host__ void MatrixMatrixMul(int p, BGKParticle *dP,int flag)
 {
     int row;
     if(flag==6)
@@ -183,17 +190,21 @@ __device__ void MatrixMatrixMul(int p, BGKParticle *dP,int flag)
             }
         }
     }
-    __syncthreads();
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif    
+    
     for(int i=0;i<row*col;i++)
     {
         dP[p].MTW[i]=C[i];
     }
-    __syncthreads();
-
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif
 }
 
 
-__device__ void MatrixVecMul(int p, BGKParticle *dP,int flag)
+__device__ __host__ void MatrixVecMul(int p, BGKParticle *dP,int flag)
 {
     int row;
     if(flag==4)
@@ -229,7 +240,7 @@ __device__ void MatrixVecMul(int p, BGKParticle *dP,int flag)
 // }
 
 
-__device__ void OptimizedFluxComputation(int p, BGKParticle *dP,Parameters Param,int flag)
+__device__ __host__ void OptimizedFluxComputation(int p, BGKParticle *dP,Parameters Param,int flag)
 {
     int row;
     if(flag==4)
@@ -250,8 +261,8 @@ __device__ void OptimizedFluxComputation(int p, BGKParticle *dP,Parameters Param
             {                
                 if(dP[p].neightype[i1]==flag)
                     dP[p].rhs[i1]=dP[dP[p].neighindex[i1]].g[linearIndex] - dP[p].g[linearIndex];
-                // if(dP[p].neightype[i1]==4)
-                //     dP[p].rhs[i1]=dP[dP[p].neighindex[i1]].g[linearIndex] - dP[p].g[linearIndex];
+                if(flag==4)
+                    dP[p].rhs[i1]=dP[dP[p].neighindex[i1]].g[linearIndex] - dP[p].g[linearIndex];
             }
             MatrixVecMul(p,dP,flag);
         }
@@ -259,7 +270,7 @@ __device__ void OptimizedFluxComputation(int p, BGKParticle *dP,Parameters Param
 }
 
 
-__device__ void ComputeOtherMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
+__device__ __host__ void ComputeOtherMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
 {
     int row=dP[p].neighcount[flag];
     dP[p].checkvariable=row;
@@ -372,7 +383,7 @@ __device__ void ComputeOtherMTWM(int p, BGKParticle *dP, Parameters Param, CalcP
     }
 }
 
-__device__ void ComputeCenterMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain)
+__device__ __host__ void ComputeCenterMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain)
 {
     int row=dP[p].totneigh;
     double Lx=(Domain.xright - Domain.xleft);
@@ -482,30 +493,40 @@ __device__ void ComputeCenterMTWM(int p, BGKParticle *dP, Parameters Param, Calc
         // dP[p].MTWM[54]+=weight*dz*dz*dz*dz*0.5*0.5;
     }
 }
-__device__ void CenterWENO(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
+__device__ __host__ void CenterWENO(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
 {
     // ComputeCenterMTWM(p, dP, Param, CalcParam, Constant,Domain);
 
     if(flag==4)
     {
         ComputeCenterMTWM(p, dP, Param, CalcParam, Constant,Domain);
+        
+        #ifdef __CUDA_ARCH__
         __syncthreads();
+        #endif
 
     }
     else
     {
         ComputeOtherMTWM(p, dP, Param, CalcParam, Constant,Domain,flag);
+        #ifdef __CUDA_ARCH__
         __syncthreads();
-
+        #endif
     }
 
     SymmetricInverseJordan(p,dP);
+    #ifdef __CUDA_ARCH__
         __syncthreads();
+    #endif
     MatrixMatrixMul(p,dP,flag);
-     __syncthreads();
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif    
     //for (int l = 0; l < Param.Nv; l++)
     OptimizedFluxComputation(p,dP,Param,flag);
-    __syncthreads();
+    #ifdef __CUDA_ARCH__
+        __syncthreads();
+    #endif
 
     //
     // {
@@ -527,6 +548,18 @@ __global__ void ConstructCenterMMatrixKernel(BGKParticle *dP, Parameters Param, 
     {
             CenterWENO(p, dP, Param, CalcParam, Constant,Domain,flag);
 
+    }
+}
+
+void ConstructCenterMMatrixKernelCPU(BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
+{
+    for(int p=0;p<CalcParam.N;p++)
+    {
+        if (dP[p].boundary!=true)
+        {
+                CenterWENO(p, dP, Param, CalcParam, Constant,Domain,flag);
+
+        }
     }
 }
 #endif

@@ -1,6 +1,8 @@
 #ifndef PRINTINFORMATION_HPP
 #define PRINTINFORMATION_HPP
 
+#include <filesystem>
+
 void printsizerequired(size_t value)
 {
 
@@ -63,12 +65,19 @@ void printneighvoxel(int ind, BGKParticle *dP)
 void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, std::string filename)
 {
     std::ofstream file;//(filename);
+    if (std::filesystem::exists(filename)) {
+        std::filesystem::remove(filename);
+        std::cout << "File deleted: " << filename << std::endl;
+    } else {
+        std::cout << "File does not exist: " << filename << std::endl;
+    }
     file.open(filename,std::ios::app);
     if (!file.is_open())
     {
         std::cerr << "Error opening file: " << filename << std::endl;
         return;
     }
+    
     std::string direction[]={"Left","Right","Bottom","Top","Front","Back"};
 
     int maxneigh = 0;
@@ -203,9 +212,26 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
             file << "RHS"<<std::endl;
             for(int i=0;i<dP[l].totneigh;i++)
             {
-                file<<std::scientific <<dP[l].rhs[i];
+                file<<std::scientific <<dP[l].rhs[i]<<" "<<dP[l].g[0];
                 file<<std::endl;
             }
+            // file << "Check RHS"<<std::endl;
+            // int row=dP[l].totneigh;
+            // int flag=4;
+            // for (int k = 0; k < Param.Nv; k++)
+            // {
+            //     for (int j = 0; j < Param.Nv; j++)
+            //     {
+            //         int linearIndex = j + Param.Nv * k;
+            //         for (int i1 = 0; i1 < row; i1++)
+            //         {                
+            //             if(dP[l].neightype[i1]==flag)
+            //                 file<<dP[dP[l].neighindex[i1]].g[linearIndex] <<" "<<dP[l].g[linearIndex]<<std::endl;
+            //             if(flag==4)
+            //                 file<<dP[dP[l].neighindex[i1]].g[linearIndex] <<" "<<dP[l].g[linearIndex]<<std::endl;
+            //         }
+            //     }
+            // }
             file << "gWENO"<<std::endl;
             for(int i=0;i<70;i++)
             {

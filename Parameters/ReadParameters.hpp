@@ -18,6 +18,8 @@ InitialConditions IC;
 Constants Constant;
 Parameters Param;
 CalcParameters CalcParam;
+std::string ExecuteOn;
+
 
 /* This function reads the parameters from the parameters.json file*/
 void readparameters()
@@ -228,6 +230,7 @@ void readparameters()
     
     Param.radiusFactor = jsonData["Parameters"]["radiusFactor"];
     Param.saveFreq = jsonData["Parameters"]["saveFreq"];  // save results every saveFreq time steps.
+    ExecuteOn=jsonData["ExecuteOn"]["CompType"];
 }
 
 
@@ -292,6 +295,7 @@ void showparameters()
     std::cout << "Number of Voxel Boxes Y Direction " << CalcParam.nbyBox << std::endl;
     std::cout << "Number of Voxel Boxes Z Direction " << CalcParam.nbzBox << std::endl;
     std::cout << "Total Number of Voxel Boxes " << CalcParam.nbxBox * CalcParam.nbyBox * CalcParam.nbyBox<< std::endl;
+    std::cout << "This Programming is working on " << ExecuteOn<<std::endl;
     // std::cout << "PDE Coefficients"<<std::endl;
     // for(int i=0;i<10;i++)
     // {

@@ -3,7 +3,7 @@
 #define VOXELMANAGEMENT_HPP
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-__device__ void VoxelNumber(BGKParticle &dP, CalcParameters CalcParam, DomainBoundary Domain)
+__device__ __host__ void VoxelNumber(BGKParticle &dP, CalcParameters CalcParam, DomainBoundary Domain)
 {
     double xBoxSize = CalcParam.xBox;
     double yBoxSize = CalcParam.yBox;
@@ -20,7 +20,7 @@ __device__ void VoxelNumber(BGKParticle &dP, CalcParameters CalcParam, DomainBou
     // return hBox + calcParam.nbhBox * vBox;
 }
 
-__device__ void VoxelInformation(BGKParticle &dP, CalcParameters CalcParam)
+__device__ __host__ void VoxelInformation(BGKParticle &dP, CalcParameters CalcParam)
 {
     int voxIndex = dP.voxel;
     int x = voxIndex % CalcParam.nbxBox;
@@ -60,6 +60,20 @@ __global__ void updateVoxelNumberingKernel(BGKParticle *dP, CalcParameters CalcP
         voxinfo[voxindex].particleindex[count] = i;
         VoxelInformation(dP[i], CalcParam);
         __syncthreads();
+        // i += blockDim.x * gridDim.x;
+    }
+}
+
+
+void updateVoxelNumberingKernelCPU(BGKParticle *dP, CalcParameters CalcParam, DomainBoundary Domain, voxelDetails *voxinfo)
+{
+    for(int i=0;i < CalcParam.N;i++)
+    {
+        VoxelNumber(dP[i], CalcParam, Domain);
+        int voxindex = dP[i].voxel;
+        int count = voxinfo[voxindex].count++;
+        voxinfo[voxindex].particleindex[count] = i;
+        VoxelInformation(dP[i], CalcParam);
         // i += blockDim.x * gridDim.x;
     }
 }

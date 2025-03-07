@@ -150,13 +150,16 @@
         "tfinal": 1,
         "r": 0.5e-6,
         "rb": 0.8e-6,
-        "Nx": 21,
-        "Ny": 21,
+        "Nx": 101,
+        "Ny": 101,
         "Nz": 1,
         "Nv":21,
         "saveFreq": 50,
         "radiusFactor": 3.5,
         "VMax" : 15,
         "VMin":-15
+    },
+    "ExecuteOn": {
+        "CompType":"CPU"
     }
 }

@@ -1,0 +1,477 @@
+221, InteriorNeigbhour Radius 0.035 (0.02 ,0.19, 0) My voxel: 145 My Status : 
+ Number of Neighbour Voxel: 9
+144 116 117 173 145 146 202 174 175 
+ Number of Neigbours 42
+Neighbour Number = 0
+Neighbour Index 10117
+From voxel:  144
+Point = (1,0.17,0)Distance = 0.980204
+Type: 
+k=0 dP[l].neightype[k] = 0 Left
+k=1 dP[l].neightype[k] = 2 Bottom
+k=2 dP[l].neightype[k] = -1 
+Neighbour Number = 1
+Neighbour Index 17
+From voxel:  116
+Point = (0,0.17,0)Distance = 0.0282843
+Type: 
+k=3 dP[l].neightype[k] = 0 Left
+k=4 dP[l].neightype[k] = 2 Bottom
+k=5 dP[l].neightype[k] = -1 
+Neighbour Number = 2
+Neighbour Index 117
+From voxel:  116
+Point = (0.01,0.16,0)Distance = 0.0316228
+Type: 
+k=6 dP[l].neightype[k] = 0 Left
+k=7 dP[l].neightype[k] = 2 Bottom
+k=8 dP[l].neightype[k] = -1 
+Neighbour Number = 3
+Neighbour Index 118
+From voxel:  116
+Point = (0.01,0.17,0)Distance = 0.0223607
+Type: 
+k=9 dP[l].neightype[k] = 0 Left
+k=10 dP[l].neightype[k] = 2 Bottom
+k=11 dP[l].neightype[k] = -1 
+Neighbour Number = 4
+Neighbour Index 218
+From voxel:  116
+Point = (0.02,0.16,0)Distance = 0.03
+Type: 
+k=12 dP[l].neightype[k] = -1 
+k=13 dP[l].neightype[k] = 2 Bottom
+k=14 dP[l].neightype[k] = -1 
+Neighbour Number = 5
+Neighbour Index 219
+From voxel:  116
+Point = (0.02,0.17,0)Distance = 0.02
+Type: 
+k=15 dP[l].neightype[k] = -1 
+k=16 dP[l].neightype[k] = 2 Bottom
+k=17 dP[l].neightype[k] = -1 
+Neighbour Number = 6
+Neighbour Index 319
+From voxel:  116
+Point = (0.03,0.16,0)Distance = 0.0316228
+Type: 
+k=18 dP[l].neightype[k] = 1 Right
+k=19 dP[l].neightype[k] = 2 Bottom
+k=20 dP[l].neightype[k] = -1 
+Neighbour Number = 7
+Neighbour Index 320
+From voxel:  116
+Point = (0.03,0.17,0)Distance = 0.0223607
+Type: 
+k=21 dP[l].neightype[k] = 1 Right
+k=22 dP[l].neightype[k] = 2 Bottom
+k=23 dP[l].neightype[k] = -1 
+Neighbour Number = 8
+Neighbour Index 421
+From voxel:  117
+Point = (0.04,0.17,0)Distance = 0.0282843
+Type: 
+k=24 dP[l].neightype[k] = 1 Right
+k=25 dP[l].neightype[k] = 2 Bottom
+k=26 dP[l].neightype[k] = -1 
+Neighbour Number = 9
+Neighbour Index 10017
+From voxel:  173
+Point = (0.99,0.18,0)Distance = 0.970052
+Type: 
+k=27 dP[l].neightype[k] = 0 Left
+k=28 dP[l].neightype[k] = 2 Bottom
+k=29 dP[l].neightype[k] = -1 
+Neighbour Number = 10
+Neighbour Index 10018
+From voxel:  173
+Point = (0.99,0.19,0)Distance = 0.97
+Type: 
+k=30 dP[l].neightype[k] = 0 Left
+k=31 dP[l].neightype[k] = -1 
+k=32 dP[l].neightype[k] = -1 
+Neighbour Number = 11
+Neighbour Index 10019
+From voxel:  173
+Point = (0.99,0.2,0)Distance = 0.970052
+Type: 
+k=33 dP[l].neightype[k] = 0 Left
+k=34 dP[l].neightype[k] = 3 Top
+k=35 dP[l].neightype[k] = -1 
+Neighbour Number = 12
+Neighbour Index 10118
+From voxel:  173
+Point = (1,0.18,0)Distance = 0.980051
+Type: 
+k=36 dP[l].neightype[k] = 0 Left
+k=37 dP[l].neightype[k] = 2 Bottom
+k=38 dP[l].neightype[k] = -1 
+Neighbour Number = 13
+Neighbour Index 10119
+From voxel:  173
+Point = (1,0.19,0)Distance = 0.98
+Type: 
+k=39 dP[l].neightype[k] = 0 Left
+k=40 dP[l].neightype[k] = -1 
+k=41 dP[l].neightype[k] = -1 
+Neighbour Number = 14
+Neighbour Index 10120
+From voxel:  173
+Point = (1,0.2,0)Distance = 0.980051
+Type: 
+k=42 dP[l].neightype[k] = 0 Left
+k=43 dP[l].neightype[k] = 3 Top
+k=44 dP[l].neightype[k] = -1 
+Neighbour Number = 15
+Neighbour Index 10121
+From voxel:  173
+Point = (1,0.21,0)Distance = 0.980204
+Type: 
+k=45 dP[l].neightype[k] = 0 Left
+k=46 dP[l].neightype[k] = 3 Top
+k=47 dP[l].neightype[k] = -1 
+Neighbour Number = 16
+Neighbour Index 18
+From voxel:  145
+Point = (0,0.18,0)Distance = 0.0223607
+Type: 
+k=48 dP[l].neightype[k] = 0 Left
+k=49 dP[l].neightype[k] = 2 Bottom
+k=50 dP[l].neightype[k] = -1 
+Neighbour Number = 17
+Neighbour Index 19
+From voxel:  145
+Point = (0,0.19,0)Distance = 0.02
+Type: 
+k=51 dP[l].neightype[k] = 0 Left
+k=52 dP[l].neightype[k] = -1 
+k=53 dP[l].neightype[k] = -1 
+Neighbour Number = 18
+Neighbour Index 20
+From voxel:  145
+Point = (0,0.2,0)Distance = 0.0223607
+Type: 
+k=54 dP[l].neightype[k] = 0 Left
+k=55 dP[l].neightype[k] = 3 Top
+k=56 dP[l].neightype[k] = -1 
+Neighbour Number = 19
+Neighbour Index 21
+From voxel:  145
+Point = (0,0.21,0)Distance = 0.0282843
+Type: 
+k=57 dP[l].neightype[k] = 0 Left
+k=58 dP[l].neightype[k] = 3 Top
+k=59 dP[l].neightype[k] = -1 
+Neighbour Number = 20
+Neighbour Index 119
+From voxel:  145
+Point = (0.01,0.18,0)Distance = 0.0141421
+Type: 
+k=60 dP[l].neightype[k] = 0 Left
+k=61 dP[l].neightype[k] = 2 Bottom
+k=62 dP[l].neightype[k] = -1 
+Neighbour Number = 21
+Neighbour Index 120
+From voxel:  145
+Point = (0.01,0.19,0)Distance = 0.01
+Type: 
+k=63 dP[l].neightype[k] = 0 Left
+k=64 dP[l].neightype[k] = -1 
+k=65 dP[l].neightype[k] = -1 
+Neighbour Number = 22
+Neighbour Index 121
+From voxel:  145
+Point = (0.01,0.2,0)Distance = 0.0141421
+Type: 
+k=66 dP[l].neightype[k] = 0 Left
+k=67 dP[l].neightype[k] = 3 Top
+k=68 dP[l].neightype[k] = -1 
+Neighbour Number = 23
+Neighbour Index 122
+From voxel:  145
+Point = (0.01,0.21,0)Distance = 0.0223607
+Type: 
+k=69 dP[l].neightype[k] = 0 Left
+k=70 dP[l].neightype[k] = 3 Top
+k=71 dP[l].neightype[k] = -1 
+Neighbour Number = 24
+Neighbour Index 220
+From voxel:  145
+Point = (0.02,0.18,0)Distance = 0.01
+Type: 
+k=72 dP[l].neightype[k] = -1 
+k=73 dP[l].neightype[k] = 2 Bottom
+k=74 dP[l].neightype[k] = -1 
+Neighbour Number = 25
+Neighbour Index 221
+From voxel:  145
+Point = (0.02,0.19,0)Distance = 0
+Type: 
+k=75 dP[l].neightype[k] = -1 
+k=76 dP[l].neightype[k] = -1 
+k=77 dP[l].neightype[k] = -1 
+Neighbour Number = 26
+Neighbour Index 222
+From voxel:  145
+Point = (0.02,0.2,0)Distance = 0.01
+Type: 
+k=78 dP[l].neightype[k] = -1 
+k=79 dP[l].neightype[k] = 3 Top
+k=80 dP[l].neightype[k] = -1 
+Neighbour Number = 27
+Neighbour Index 223
+From voxel:  145
+Point = (0.02,0.21,0)Distance = 0.02
+Type: 
+k=81 dP[l].neightype[k] = -1 
+k=82 dP[l].neightype[k] = 3 Top
+k=83 dP[l].neightype[k] = -1 
+Neighbour Number = 28
+Neighbour Index 321
+From voxel:  145
+Point = (0.03,0.18,0)Distance = 0.0141421
+Type: 
+k=84 dP[l].neightype[k] = 1 Right
+k=85 dP[l].neightype[k] = 2 Bottom
+k=86 dP[l].neightype[k] = -1 
+Neighbour Number = 29
+Neighbour Index 322
+From voxel:  145
+Point = (0.03,0.19,0)Distance = 0.01
+Type: 
+k=87 dP[l].neightype[k] = 1 Right
+k=88 dP[l].neightype[k] = -1 
+k=89 dP[l].neightype[k] = -1 
+Neighbour Number = 30
+Neighbour Index 323
+From voxel:  145
+Point = (0.03,0.2,0)Distance = 0.0141421
+Type: 
+k=90 dP[l].neightype[k] = 1 Right
+k=91 dP[l].neightype[k] = 3 Top
+k=92 dP[l].neightype[k] = -1 
+Neighbour Number = 31
+Neighbour Index 324
+From voxel:  145
+Point = (0.03,0.21,0)Distance = 0.0223607
+Type: 
+k=93 dP[l].neightype[k] = 1 Right
+k=94 dP[l].neightype[k] = 3 Top
+k=95 dP[l].neightype[k] = -1 
+Neighbour Number = 32
+Neighbour Index 422
+From voxel:  146
+Point = (0.04,0.18,0)Distance = 0.0223607
+Type: 
+k=96 dP[l].neightype[k] = 1 Right
+k=97 dP[l].neightype[k] = 2 Bottom
+k=98 dP[l].neightype[k] = -1 
+Neighbour Number = 33
+Neighbour Index 423
+From voxel:  146
+Point = (0.04,0.19,0)Distance = 0.02
+Type: 
+k=99 dP[l].neightype[k] = 1 Right
+k=100 dP[l].neightype[k] = -1 
+k=101 dP[l].neightype[k] = -1 
+Neighbour Number = 34
+Neighbour Index 424
+From voxel:  146
+Point = (0.04,0.2,0)Distance = 0.0223607
+Type: 
+k=102 dP[l].neightype[k] = 1 Right
+k=103 dP[l].neightype[k] = 3 Top
+k=104 dP[l].neightype[k] = -1 
+Neighbour Number = 35
+Neighbour Index 425
+From voxel:  146
+Point = (0.04,0.21,0)Distance = 0.0282843
+Type: 
+k=105 dP[l].neightype[k] = 1 Right
+k=106 dP[l].neightype[k] = 3 Top
+k=107 dP[l].neightype[k] = -1 
+Neighbour Number = 36
+Neighbour Index 523
+From voxel:  146
+Point = (0.05,0.18,0)Distance = 0.0316228
+Type: 
+k=108 dP[l].neightype[k] = 1 Right
+k=109 dP[l].neightype[k] = 2 Bottom
+k=110 dP[l].neightype[k] = -1 
+Neighbour Number = 37
+Neighbour Index 524
+From voxel:  146
+Point = (0.05,0.19,0)Distance = 0.03
+Type: 
+k=111 dP[l].neightype[k] = 1 Right
+k=112 dP[l].neightype[k] = -1 
+k=113 dP[l].neightype[k] = -1 
+Neighbour Number = 38
+Neighbour Index 525
+From voxel:  146
+Point = (0.05,0.2,0)Distance = 0.0316228
+Type: 
+k=114 dP[l].neightype[k] = 1 Right
+k=115 dP[l].neightype[k] = 3 Top
+k=116 dP[l].neightype[k] = -1 
+Neighbour Number = 39
+Neighbour Index 123
+From voxel:  174
+Point = (0.01,0.22,0)Distance = 0.0316228
+Type: 
+k=117 dP[l].neightype[k] = 0 Left
+k=118 dP[l].neightype[k] = 3 Top
+k=119 dP[l].neightype[k] = -1 
+Neighbour Number = 40
+Neighbour Index 224
+From voxel:  174
+Point = (0.02,0.22,0)Distance = 0.03
+Type: 
+k=120 dP[l].neightype[k] = -1 
+k=121 dP[l].neightype[k] = 3 Top
+k=122 dP[l].neightype[k] = -1 
+Neighbour Number = 41
+Neighbour Index 325
+From voxel:  174
+Point = (0.03,0.22,0)Distance = 0.0316228
+Type: 
+k=123 dP[l].neightype[k] = 1 Right
+k=124 dP[l].neightype[k] = 3 Top
+k=125 dP[l].neightype[k] = -1 
+
+MTW Matrix
+0.0198735 0.0198735 0.0074618 0.0863817 0.0121775 0.140973 0.0074618 0.0863817 0.0198735 0.0074618 0.0121775 0.0074618 0.0863817 0.140973 0.0863817 0.0198735 0.0863817 0.140973 0.0863817 0.0198735 0.375464 0.612751 0.375464 0.0863817 0.612751 1 0.612751 0.140973 0.375464 0.612751 0.375464 0.0863817 0.0863817 0.140973 0.0863817 0.0198735 0.0074618 0.0121775 0.0074618 0.0074618 0.0121775 0.0074618 
+-0.00039747 -0.00039747 -7.4618e-05 -0.000863817 0 0 7.4618e-05 0.000863817 0.00039747 -0.000223854 -0.000365326 -0.000223854 -0.00172763 -0.00281947 -0.00172763 -0.00039747 -0.00172763 -0.00281947 -0.00172763 -0.00039747 -0.00375464 -0.00612751 -0.00375464 -0.000863817 0 0 0 0 0.00375464 0.00612751 0.00375464 0.000863817 0.00172763 0.00281947 0.00172763 0.00039747 0.000223854 0.000365326 0.000223854 -7.4618e-05 0 7.4618e-05 
+3.9747e-06 3.9747e-06 3.7309e-07 4.31908e-06 0 0 3.7309e-07 4.31908e-06 3.9747e-06 3.35781e-06 5.47989e-06 3.35781e-06 1.72763e-05 2.81947e-05 1.72763e-05 3.9747e-06 1.72763e-05 2.81947e-05 1.72763e-05 3.9747e-06 1.87732e-05 3.06376e-05 1.87732e-05 4.31908e-06 0 0 0 0 1.87732e-05 3.06376e-05 1.87732e-05 4.31908e-06 1.72763e-05 2.81947e-05 1.72763e-05 3.9747e-06 3.35781e-06 5.47989e-06 3.35781e-06 3.7309e-07 0 3.7309e-07 
+-0.00039747 -0.00039747 -0.000223854 -0.00172763 -0.000365326 -0.00281947 -0.000223854 -0.00172763 -0.00039747 -7.4618e-05 0 7.4618e-05 -0.000863817 0 0.000863817 0.00039747 -0.000863817 0 0.000863817 0.00039747 -0.00375464 0 0.00375464 0.00172763 -0.00612751 0 0.00612751 0.00281947 -0.00375464 0 0.00375464 0.00172763 -0.000863817 0 0.000863817 0.00039747 -7.4618e-05 0 7.4618e-05 0.000223854 0.000365326 0.000223854 
+7.94941e-06 7.94941e-06 2.23854e-06 1.72763e-05 -0 -0 -2.23854e-06 -1.72763e-05 -7.94941e-06 2.23854e-06 -0 -2.23854e-06 1.72763e-05 -0 -1.72763e-05 -7.94941e-06 1.72763e-05 -0 -1.72763e-05 -7.94941e-06 3.75464e-05 -0 -3.75464e-05 -1.72763e-05 -0 0 0 0 -3.75464e-05 0 3.75464e-05 1.72763e-05 -1.72763e-05 0 1.72763e-05 7.94941e-06 -2.23854e-06 0 2.23854e-06 -2.23854e-06 0 2.23854e-06 
+3.9747e-06 3.9747e-06 3.35781e-06 1.72763e-05 5.47989e-06 2.81947e-05 3.35781e-06 1.72763e-05 3.9747e-06 3.7309e-07 0 3.7309e-07 4.31908e-06 0 4.31908e-06 3.9747e-06 4.31908e-06 0 4.31908e-06 3.9747e-06 1.87732e-05 0 1.87732e-05 1.72763e-05 3.06376e-05 0 3.06376e-05 2.81947e-05 1.87732e-05 0 1.87732e-05 1.72763e-05 4.31908e-06 0 4.31908e-06 3.9747e-06 3.7309e-07 0 3.7309e-07 3.35781e-06 5.47989e-06 3.35781e-06 
+MTWM Inv Matrix
+0.319081 -0.638143 -1571.74 -1.10618e-15 -4.20042e-14 -1607.44 
+-0.638143 1334.02 34852 -8.54853e-15 -1.55369e-12 264.852 
+-1571.74 34852 2.69581e+07 2.1275e-12 -1.31176e-10 880300 
+-1.10618e-15 -8.54853e-15 2.1275e-12 1494.61 13397 1.23934e-11 
+-4.20042e-14 -1.55369e-12 -1.31176e-10 13397 1.36295e+07 7.77502e-10 
+-1607.44 264.852 880300 1.23934e-11 7.77502e-10 3.11283e+07 
+RHS
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-3.439266e-16 1.051002e-09
+-3.439266e-16 1.051002e-09
+0.000000e+00 1.051002e-09
+0.000000e+00 1.051002e-09
+3.411923e-16 1.051002e-09
+3.411923e-16 1.051002e-09
+6.783042e-16 1.051002e-09
+-1.034549e-15 1.051002e-09
+-1.034549e-15 1.051002e-09
+-1.034549e-15 1.051002e-09
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-6.892305e-16 1.051002e-09
+-3.439266e-16 1.051002e-09
+-3.439266e-16 1.051002e-09
+-3.439266e-16 1.051002e-09
+-3.439266e-16 1.051002e-09
+0.000000e+00 1.051002e-09
+0.000000e+00 1.051002e-09
+0.000000e+00 1.051002e-09
+0.000000e+00 1.051002e-09
+3.411923e-16 1.051002e-09
+3.411923e-16 1.051002e-09
+3.411923e-16 1.051002e-09
+3.411923e-16 1.051002e-09
+6.783042e-16 1.051002e-09
+6.783042e-16 1.051002e-09
+6.783042e-16 1.051002e-09
+6.783042e-16 1.051002e-09
+1.010006e-15 1.051002e-09
+1.010006e-15 1.051002e-09
+1.010006e-15 1.051002e-09
+-3.439266e-16 1.051002e-09
+0.000000e+00 1.051002e-09
+3.411923e-16 1.051002e-09
+gWENO
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+-3.521754e-15
+3.718924e-16
+-6.967686e-19
+3.526859e-33
+6.394689e-36
+-1.653192e-19
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+Maximum Number of Neighbours 52
+My CheckVariable 0 and from GPU 20
+Total Number of Neighbours in LeftCounted Using GPU is 20
+Total Number of Neighbours in RightCounted Using GPU is 15
+Total Number of Neighbours in BottomCounted Using GPU is 17
+Total Number of Neighbours in TopCounted Using GPU is 17
+Total Number of Neighbours in FrontCounted Using GPU is 0
+Total Number of Neighbours in BackCounted Using GPU is 0
