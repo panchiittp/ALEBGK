@@ -18,11 +18,11 @@ void GPUSolvers()
     cudaEventRecord(start, 0);
 
     cudaMallocManaged((void **)&dP, sizeof(BGKParticle) * CalcParam.N);
-    cudaMemPrefetchAsync(dP, CalcParam.N* sizeof(BGKParticle), cudaCpuDeviceId);
+    //cudaMemPrefetchAsync(dP, CalcParam.N* sizeof(BGKParticle), cudaCpuDeviceId);
 
     cudaMallocManaged((void **)&dvoxinfo, sizeof(voxelDetails) * CalcParam.nbxBox * CalcParam.nbyBox * CalcParam.nbzBox);
     //cudaMallocManaged((void **)&ddelpart, sizeof(voxelDetails) * 5);
-    cudaMemPrefetchAsync(dvoxinfo, CalcParam.nbxBox * CalcParam.nbyBox * CalcParam.nbzBox* sizeof(voxelDetails), cudaCpuDeviceId);
+    //cudaMemPrefetchAsync(dvoxinfo, CalcParam.nbxBox * CalcParam.nbyBox * CalcParam.nbzBox* sizeof(voxelDetails), cudaCpuDeviceId);
 
     cudaEventRecord(stop, 0);
     cudaEventSynchronize(stop);
@@ -36,7 +36,8 @@ void GPUSolvers()
         getfreememinfo("Initial  Allocation");
     cudaEventRecord(start, 0);        
     GenerateParticlesKernel<<<numBlocks, blockSize>>>(dP, CalcParam, Param, Domain);
-    
+    Generatevoxel(dvoxinfo,CalcParam,Param,Domain);
+    printvoxelDetails(dvoxinfo,CalcParam,"VoxelDetail.dat");
     cudaEventRecord(stop, 0);
     cudaEventSynchronize(stop);
 
@@ -51,14 +52,24 @@ void GPUSolvers()
     cudaEventRecord(start, 0);        
     cudaDeviceSynchronize();
 
-        
+    GenerateVoxelNumberingKernel<<<numBlocks, blockSize>>>(dP, CalcParam, Domain, dvoxinfo);
+    std::cout << "Voxel formation completed succesfully" << std::endl;
+    // iwantsaveonly(dP, CalcParam,0, dvoxinfo, true, "NeighboursMatMul.txt");
+    //     return 0;
+    cudaDeviceSynchronize();
+    SaveParticleForMatlab("VoxelNumber.dat",dP,CalcParam.N);
+//    return ;
+
+    
     updateVoxelNumberingKernel<<<numBlocks, blockSize>>>(dP, CalcParam, Domain, dvoxinfo);
     std::cout << "Voxel formation completed succesfully" << std::endl;
     // iwantsaveonly(dP, CalcParam,0, dvoxinfo, true, "NeighboursMatMul.txt");
     //     return 0;
     cudaEventRecord(stop, 0);
     cudaEventSynchronize(stop);
-    
+    printallvoxel(dvoxinfo,CalcParam);
+    //SaveParticleForMatlab("VoxelNumber.dat",dP,CalcParam.N);
+
     milliseconds = 0;
     cudaEventElapsedTime(&milliseconds, start, stop);
     
@@ -78,10 +89,11 @@ void GPUSolvers()
     cudaEventSynchronize(stop);
     cudaDeviceSynchronize();
     // IdentifyNeighbourType<<<numBlocks, blockSize>>>(dP, CalcParam,Domain);
-    // cudaDeviceSynchronize();
+    cudaDeviceSynchronize();
+    printallparticleneigh(dP,CalcParam,"AllParticleInformationGPU.dat");
     printneighanddist(0,dP);
     printneighvoxel(0,dP);    
-    SaveNeighbourParticleForMatlab("NeighbourInitialParticles.dat",dP,CalcParam.N,221);
+    SaveNeighbourParticleForMatlab("NeighbourInitialParticles.dat",dP,CalcParam.N,visParticleNumber);
 
     cout << "updating neighbours are completed succesfully" << endl;
 
@@ -114,7 +126,7 @@ void GPUSolvers()
     std::string direction[]={"Left","Right","Bottom","Top","Front","Back"};
     for(int i=0;i<4;i++)
     {
-        SavePeriodicNeighbourParticleForMatlab(direction[i]+"PeriodicNeighbourInitialParticles.dat",dP,CalcParam.N,221,i);
+        SavePeriodicNeighbourParticleForMatlab(direction[i]+"PeriodicNeighbourInitialParticles.dat",dP,CalcParam.N,visParticleNumber,i);
     }
     
     
@@ -129,7 +141,7 @@ void GPUSolvers()
         std::cout << "Working on Time Step : " << t << " and Iteration Number: " << count << std::endl;
         auto start1 = std::chrono::high_resolution_clock::now();
 
-        const int blockSize1 = 512;
+        const int blockSize1 = 32;
         int numBlocks1 = (CalcParam.N + blockSize1 - 1) / blockSize1;
         cudaEventRecord(start, 0);        
         
@@ -137,7 +149,7 @@ void GPUSolvers()
         
         // for(int flag=0;flag<5;flag++)
         // {    
-            int flag=4;
+            int flag=myflag;
             ConstructCenterMMatrixKernel<<<numBlocks1, blockSize1>>>(dP, Param, CalcParam, Constant,Domain,flag);
             cudaDeviceSynchronize();
         // }
@@ -152,10 +164,11 @@ void GPUSolvers()
         std::cout << "Completed MLS Method  Kernel" << std::endl;
         std::cout << "Time for MLS Method  Kernel: " << milliseconds/1000.0f << " seconds==========" << std::endl;
         std::cout<<"Param.Nv = "<<Param.Nv<<std::endl;
-        printperiodicneigh(dP,CalcParam,221,"PeriodicNeighbours.txt"); 
+        printperiodicneigh(dP,CalcParam,visParticleNumber,"PeriodicNeighbours.txt"); 
         // for(int i=0;i<CalcParam.N;i++)
         //     if(dP[i].boundary!=true)
         //         printperiodicneigh(dP,CalcParam,i,"PeriodicNeighbours.txt"); 
+        cudaDeviceReset();
         return;
     }
 }

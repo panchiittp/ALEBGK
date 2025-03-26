@@ -28,7 +28,7 @@ void getfreememinfo(std::string text)
     cudaEventCreate(&stop);
     cudaEventRecord(start, 0);
     CUDA_CHECK(cudaGetLastError());
-    //cudaDeviceSynchronize();
+    cudaDeviceSynchronize();
     size_t free_mem = 0;
     size_t total_mem = 0;
     cudaError_t err = cudaMemGetInfo(&free_mem, &total_mem);

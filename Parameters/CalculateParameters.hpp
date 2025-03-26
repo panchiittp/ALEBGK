@@ -16,11 +16,13 @@ void CalculateParameters()
     else
         CalcParam.dz = 1;
     CalcParam.N = Param.Nx * Param.Ny * Param.Nz;
-    CalcParam.xBox = CalcParam.dx * Param.radiusFactor;
-    CalcParam.yBox = CalcParam.dy * Param.radiusFactor;
+    CalcParam.xBox = 0.1;//CalcParam.dx * Param.radiusFactor;
+    CalcParam.yBox = 0.1;//CalcParam.dy * Param.radiusFactor;
     CalcParam.zBox = CalcParam.dz * Param.radiusFactor;
     CalcParam.radius = CalcParam.dx * Param.radiusFactor;
     CalcParam.minDist = CalcParam.dx * 0.05;
+
+
 
     CalcParam.nbxBox = ceil((Domain.xright - Domain.xleft) / CalcParam.xBox); // Amount of voxels in horizontal direction
     CalcParam.nbyBox = ceil((Domain.ytop - Domain.ybottom) / CalcParam.yBox); // Amount of voxels in vertical direction

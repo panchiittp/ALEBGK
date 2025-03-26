@@ -8,28 +8,30 @@ void CPUSolvers()
     voxelDetails *dvoxinfo;// *ddelpart;
     dP=new BGKParticle[CalcParam.N];
     dvoxinfo=new voxelDetails[CalcParam.nbxBox * CalcParam.nbyBox * CalcParam.nbzBox];
-    GenerateParticlesKernelCPU(dP, CalcParam, Param, Domain);
-    
-    updateVoxelNumberingKernelCPU(dP, CalcParam, Domain, dvoxinfo);
+    GenerateParticlesCPU(dP, CalcParam, Param, Domain);
+    GenerateVoxelNumberingCPU(dP, CalcParam, Domain, dvoxinfo);
+    updateVoxelNumberingCPU(dP, CalcParam, Domain, dvoxinfo);
+    printallvoxel(dvoxinfo,CalcParam);
     findNeighborParticlesPeriodicCPU(dP, CalcParam, dvoxinfo,Domain);
-    cout << "updating neighbours are completed succesfully" << endl;
+    std::cout << "updating neighbours are completed succesfully" << std::endl;
+    printallparticleneigh(dP,CalcParam,"AllParticleInformation.dat");
     IdentifyNeighbourTypeCPU(dP, CalcParam,Domain);
-    printneighanddist(0,dP);
-    printneighvoxel(0,dP);    
-    SaveNeighbourParticleForMatlab("NeighbourInitialParticlesCPU.dat",dP,CalcParam.N,221);
+    printneighanddist(visParticleNumber,dP);
+    printneighvoxel(visParticleNumber,dP);    
+    SaveNeighbourParticleForMatlab("NeighbourInitialParticlesCPU.dat",dP,CalcParam.N,visParticleNumber);
 
-    cout << "updating neighbours are completed succesfully" << endl;
+    std::cout << "updating neighbours Type are completed succesfully" << std::endl;
 
     
     
-    applyInitialConditionsKernelCPU(dP, CalcParam, Param, IC, Constant);
+    applyInitialConditionsCPU(dP, CalcParam, Param, IC, Constant);
 
 
 
     std::string direction[]={"Left","Right","Bottom","Top","Front","Back"};
     for(int i=0;i<4;i++)
     {
-        SavePeriodicNeighbourParticleForMatlab(direction[i]+"PeriodicNeighbourInitialParticlesCPU.dat",dP,CalcParam.N,221,i);
+        SavePeriodicNeighbourParticleForMatlab(direction[i]+"PeriodicNeighbourInitialParticlesCPU.dat",dP,CalcParam.N,visParticleNumber,i);
     }
     
     
@@ -45,17 +47,17 @@ void CPUSolvers()
         auto start1 = std::chrono::high_resolution_clock::now();
 
     
-        std::cout << "Working on MLS Method Kernel" << std::endl;
+        std::cout << "Working on MLS Method " << std::endl;
         
         // for(int flag=0;flag<5;flag++)
         // {    
             int flag=4;
-            ConstructCenterMMatrixKernelCPU(dP, Param, CalcParam, Constant,Domain,flag);
+            ConstructCenterMMatrixCPU(dP, Param, CalcParam, Constant,Domain,flag);
         // }
 
         
 
-         printperiodicneigh(dP,CalcParam,221,"PeriodicNeighboursCPU.txt"); 
+         printperiodicneigh(dP,CalcParam,visParticleNumber,"PeriodicNeighboursCPU.txt"); 
     //     // for(int i=0;i<CalcParam.N;i++)
     //     //     if(dP[i].boundary!=true)
     //     //         printperiodicneigh(dP,CalcParam,i,"PeriodicNeighbours.txt"); 

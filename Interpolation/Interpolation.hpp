@@ -1,7 +1,7 @@
 #ifndef INTERPOLATION_HPP
 #define INTERPOLATION_HPP
 
-__device__ __host__ int index(int i, int j,int N)
+__device__ int index(int i, int j,int N)
 {
     if(j>=i)
     {
@@ -12,7 +12,7 @@ __device__ __host__ int index(int i, int j,int N)
         return N*j+i-j*(j+1)/2;
     }
 }
-__device__ __host__ void SymmetricInverseJordan(int p,BGKParticle *dP)
+__device__ void SymmetricInverseJordan(int p,BGKParticle *dP)
 {
     int N=6;
     double A[6][6];
@@ -166,7 +166,7 @@ __device__ __host__ void SymmetricInverseJordan(int p,BGKParticle *dP)
 // }
 
 
-__device__ __host__ void MatrixMatrixMul(int p, BGKParticle *dP,int flag)
+__device__  void MatrixMatrixMul(int p, BGKParticle *dP,int flag)
 {
     int row;
     if(flag==6)
@@ -204,7 +204,7 @@ __device__ __host__ void MatrixMatrixMul(int p, BGKParticle *dP,int flag)
 }
 
 
-__device__ __host__ void MatrixVecMul(int p, BGKParticle *dP,int flag)
+__device__  void MatrixVecMul(int p, BGKParticle *dP,int flag)
 {
     int row;
     if(flag==4)
@@ -223,7 +223,7 @@ __device__ __host__ void MatrixVecMul(int p, BGKParticle *dP,int flag)
     {
         for(int j=0;j<row;j++)
         {
-            dP[p].gWENO[flag*10+i]+=dP[p].MTW[i*row+j]*dP[p].rhs[j];
+            dP[p].gWENO[flag*col+i]+=dP[p].MTW[i*row+j]*dP[p].rhs[j];
         }
     }
 }
@@ -240,7 +240,7 @@ __device__ __host__ void MatrixVecMul(int p, BGKParticle *dP,int flag)
 // }
 
 
-__device__ __host__ void OptimizedFluxComputation(int p, BGKParticle *dP,Parameters Param,int flag)
+__device__  void OptimizedFluxComputation(int p, BGKParticle *dP,Parameters Param,int flag)
 {
     int row;
     if(flag==4)
@@ -270,7 +270,7 @@ __device__ __host__ void OptimizedFluxComputation(int p, BGKParticle *dP,Paramet
 }
 
 
-__device__ __host__ void ComputeOtherMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
+__device__  void ComputeOtherMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
 {
     int row=dP[p].neighcount[flag];
     dP[p].checkvariable=row;
@@ -299,7 +299,7 @@ __device__ __host__ void ComputeOtherMTWM(int p, BGKParticle *dP, Parameters Par
                 // if (dz <= -Lz / 2.0) dz += Lz;
             }
             double dummy = std::pow(dx, 2) + std::pow(dy, 2);// + std::pow(dz, 2);
-            double weight=std::exp(-Constant.alpha * (dummy)/(CalcParam.radius*CalcParam.radius));
+            double weight=1.0;//std::exp(-Constant.alpha * (dummy)/(CalcParam.radius*CalcParam.radius));
             // dP[p].W[i] = weight;
             dP[p].MTW[i]=1.0*weight;
             dP[p].MTW[row+i]=dx*weight;
@@ -383,13 +383,14 @@ __device__ __host__ void ComputeOtherMTWM(int p, BGKParticle *dP, Parameters Par
     }
 }
 
-__device__ __host__ void ComputeCenterMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain)
+__device__  void ComputeCenterMTWM(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain)
 {
     int row=dP[p].totneigh;
     double Lx=(Domain.xright - Domain.xleft);
     double Ly=(Domain.ytop - Domain.ybottom);
     // double Lz=(Domain.zback - Domain.zfront);
     //printf("I am Inside this function\n");
+    
     for (int i = 0; i < dP[p].totneigh; i++)
     {
         int neigh = dP[p].neighindex[i];
@@ -411,7 +412,16 @@ __device__ __host__ void ComputeCenterMTWM(int p, BGKParticle *dP, Parameters Pa
         }
         double dummy = std::pow(dx, 2) + std::pow(dy, 2);// + std::pow(dz, 2);
         double weight=std::exp(-Constant.alpha * (dummy)/(CalcParam.radius*CalcParam.radius));
-        // dP[p].W[i] = weight;
+        dP[p].M[i*row]=1;
+        dP[p].M[i*row+1]=dx;
+        dP[p].M[i*row+2]=0.5*dx*dx;
+        dP[p].M[i*row+3]=dy;
+        dP[p].M[i*row+4]=dx*dy;
+        dP[p].M[i*row+5]=0.5*dy*dy;
+        dP[p].W[i]=weight;
+        if((i==0 || i==1) && p==1251)
+            printf("i= %d weight = %lf\n",i,dP[p].W[i]);
+
         dP[p].MTW[i]=1.0*weight;
         dP[p].MTW[row+i]=dx*weight;
         dP[p].MTW[2*row+i]=0.5*dx*dx*weight;
@@ -492,8 +502,12 @@ __device__ __host__ void ComputeCenterMTWM(int p, BGKParticle *dP, Parameters Pa
 
         // dP[p].MTWM[54]+=weight*dz*dz*dz*dz*0.5*0.5;
     }
+    #ifdef __CUDA_ARCH__
+    __syncthreads();
+    #endif
+
 }
-__device__ __host__ void CenterWENO(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
+__device__  void CenterWENO(int p, BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
 {
     // ComputeCenterMTWM(p, dP, Param, CalcParam, Constant,Domain);
 
@@ -551,15 +565,5 @@ __global__ void ConstructCenterMMatrixKernel(BGKParticle *dP, Parameters Param, 
     }
 }
 
-void ConstructCenterMMatrixKernelCPU(BGKParticle *dP, Parameters Param, CalcParameters CalcParam, Constants Constant,DomainBoundary Domain,int flag)
-{
-    for(int p=0;p<CalcParam.N;p++)
-    {
-        if (dP[p].boundary!=true)
-        {
-                CenterWENO(p, dP, Param, CalcParam, Constant,Domain,flag);
-
-        }
-    }
-}
+#include "InterpolationCPU.hpp"
 #endif

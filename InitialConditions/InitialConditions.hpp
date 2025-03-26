@@ -33,25 +33,22 @@ __global__ void applyInitialConditionsKernel(BGKParticle *dP, CalcParameters Cal
             dP[particleIndex].uy = 0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
         }
         
-        for (int k = 0; k < Param.Nv; ++k)
-        {
             for (int j = 0; j < Param.Nv; ++j)
             {
                 for (int i = 0; i < Param.Nv; ++i)
                 {
-                    int linearIndex = i + Param.Nv * j + Param.Nv * Param.Nv * k;
+                    int linearIndex = i + Param.Nv * j;
                     dP[particleIndex].g[linearIndex] = rho * std::exp(-(std::pow(CalcParam.vRange[i] - dP[particleIndex].ux, 2) + std::pow(CalcParam.vRange[j] - dP[particleIndex].uy, 2)) / (2 * Constant.R * T)) / std::pow((2 * Constant.R * 3.14159 * T), 1.5); // g1
                     dP[particleIndex].g[linearIndex + (Param.Nv * Param.Nv)] = Constant.R * T * dP[particleIndex].g[linearIndex]; //g2
                     //printf("gLinear Thread %d: dP[%d].rhs[%d] = %e\n", particleIndex, k, linearIndex, dP[particleIndex].g[linearIndex]);  
                     dP[particleIndex].gt[linearIndex] = dP[particleIndex].g[linearIndex];
                 }
             }
-        }
     }
 }
 
 
-void applyInitialConditionsKernelCPU(BGKParticle *dP, CalcParameters CalcParam, Parameters Param, InitialConditions IC, Constants Constant)
+void applyInitialConditionsCPU(BGKParticle *dP, CalcParameters CalcParam, Parameters Param, InitialConditions IC, Constants Constant)
 {
 
 
@@ -80,21 +77,18 @@ void applyInitialConditionsKernelCPU(BGKParticle *dP, CalcParameters CalcParam, 
             dP[particleIndex].ux = 0.5+0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
             dP[particleIndex].uy = 0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
         }
-        
-        for (int k = 0; k < Param.Nv; ++k)
-        {
-            for (int j = 0; j < Param.Nv; ++j)
+        // std::cout<<"Applying Initial Conditions for "<<particleIndex<<std::endl;
+           for (int j = 0; j < Param.Nv; ++j)
             {
                 for (int i = 0; i < Param.Nv; ++i)
                 {
-                    int linearIndex = i + Param.Nv * j + Param.Nv * Param.Nv * k;
+                    int linearIndex = i + Param.Nv * j;
                     dP[particleIndex].g[linearIndex] = rho * std::exp(-(std::pow(CalcParam.vRange[i] - dP[particleIndex].ux, 2) + std::pow(CalcParam.vRange[j] - dP[particleIndex].uy, 2)) / (2 * Constant.R * T)) / std::pow((2 * Constant.R * 3.14159 * T), 1.5); // g1
                     dP[particleIndex].g[linearIndex + (Param.Nv * Param.Nv)] = Constant.R * T * dP[particleIndex].g[linearIndex]; //g2
                     //printf("gLinear Thread %d: dP[%d].rhs[%d] = %e\n", particleIndex, k, linearIndex, dP[particleIndex].g[linearIndex]);  
                     dP[particleIndex].gt[linearIndex] = dP[particleIndex].g[linearIndex];
                 }
             }
-        }
     }
 }
 #endif

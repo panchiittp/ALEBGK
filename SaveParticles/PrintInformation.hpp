@@ -36,6 +36,14 @@ void printvoxelinfo(voxelDetails *dvoxinfo, int i)
     std::cout << std::endl;
 }
 
+
+void printparticularparticle(int ind, BGKParticle *dP)
+{
+    std::cout << "Point: " << ind << "(" << dP[ind].x << "," << dP[ind].y << "," << dP[ind].z << ")" << std::endl;
+    std::cout << "Active: " << dP[ind].active << ", Boundary: " << dP[ind].boundary << ",valid g " << dP[ind].validg << ")" << std::endl;
+
+}
+
 void printneighanddist(int ind, BGKParticle *dP)
 {
     std::cout << "Point: " << ind << "(" << dP[ind].x << "," << dP[ind].y << "," << dP[ind].z << ")" << std::endl;
@@ -62,6 +70,32 @@ void printneighvoxel(int ind, BGKParticle *dP)
 }
 
 
+
+void printallparticleneigh(BGKParticle *dP,CalcParameters CalcParam,std::string filename)
+{
+    std::ofstream file;//(filename);
+    if (std::filesystem::exists(filename)) {
+        std::filesystem::remove(filename);
+        std::cout << "File deleted: " << filename << std::endl;
+    } else {
+        std::cout << "File does not exist: " << filename << std::endl;
+    }
+    file.open(filename,std::ios::app);
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return;
+    }
+    int maxneigh=0;
+    for(int ind=0;ind<CalcParam.N;ind++)
+    {
+        file << "Point: " << ind << "(" << dP[ind].x << "," << dP[ind].y << "," << dP[ind].z << ") Total Neighbours = " <<dP[ind].totneigh<< std::endl;
+        if(maxneigh<dP[ind].totneigh)
+            maxneigh=dP[ind].totneigh;
+    }
+    file<<"Maximum Number of Neighbours ="<<maxneigh<<std::endl;
+    file.close();
+}
 void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, std::string filename)
 {
     std::ofstream file;//(filename);
@@ -106,11 +140,18 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
             int totneigh[6]={0,0,0,0,0,0};
             for (int j = 0; j < dP[l].totneigh; j++)
             {
-                file << "Neighbour Number = "<<j<<std::endl<< "Neighbour Index " <<dP[l].neighindex[j] << std::endl<< "From voxel:  " << dP[dP[l].neighindex[j]].voxel <<std::endl
-                            << "Point = (" << dP[dP[l].neighindex[j]].x<<","<<dP[dP[l].neighindex[j]].y<<","<<dP[dP[l].neighindex[j]].z<<")"
-                            <<"Distance = " << sqrt((dP[l].x-dP[dP[l].neighindex[j]].x)*(dP[l].x-dP[dP[l].neighindex[j]].x)+
-                                                (dP[l].y-dP[dP[l].neighindex[j]].y)*(dP[l].y-dP[dP[l].neighindex[j]].y)+
-                                                (dP[l].z-dP[dP[l].neighindex[j]].z)*(dP[l].z-dP[dP[l].neighindex[j]].z))<< std::endl<< "Type: "<<std::endl;                    
+                double dx=dP[l].x-dP[dP[l].neighindex[j]].x;
+                double dy=dP[l].y-dP[dP[l].neighindex[j]].y;
+                double dz=dP[l].z-dP[dP[l].neighindex[j]].z;
+                file <<std::scientific<< "Neighbour Number = "<<j<<std::endl<< "Neighbour Index " <<dP[l].neighindex[j] << std::endl<< "From voxel:  " << dP[dP[l].neighindex[j]].voxel <<std::endl
+                            << "Point = (" << dP[dP[l].neighindex[j]].x<<","<<dP[dP[l].neighindex[j]].y<<","<<dP[dP[l].neighindex[j]].z<<")"   << std::endl                         
+                            << "(dx,dy,dz) = (" << dx<<","<<dy<<","<<dz<<")"<< std::endl
+                            << "(dx*dx,dy*dy,dz*dz) = (" << dx*dx<<","<<dy*dy<<","<<dz*dz<<")"<< std::endl
+                            << "(dx*dy,dx*dz,dy*dz) = (" << dx*dy<<","<<dx*dz<<","<<dy*dz<<")"<< std::endl
+                            <<"Distance = " << sqrt(dx*dx+dy*dy+dz*dz)<< std::endl
+                            <<"Alpha = " << Constant.alpha<< std::endl
+                            <<"Exp Term ="<<Constant.alpha*sqrt(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius)
+                            <<"Weight = " << std::exp(-Constant.alpha*sqrt(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius))<< std::endl<< "Type: "<<std::endl;                                         
                 for(int k=3*j;k<3*(j+1);k++)
                 {
                     file<<"k="<<k<<" dP[l].neightype[k] = "<<dP[l].neightype[k]<<" ";
@@ -156,14 +197,14 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
                         file<<std::endl;
                 }
                 
-                // file<<"M Matrix"<<std::endl;
-                // for(int k=0;k<10;k++)
-                // {
-                //     file<<dP[l].M[j*10+k]<<" ";
-                // }              
-                // file<<std::endl<<"W Matrix"<<std::endl;
-                // file<<dP[l].W[j];
-                // file << std::endl;
+                file<<"M Matrix"<<std::endl;
+                for(int k=0;k<6;k++)
+                {
+                    file<<dP[l].M[j*6+k]<<" ";
+                }              
+                file<<std::endl<<"W Matrix"<<std::endl;
+                file<<dP[l].W[j];
+                file << std::endl;
             }
             for(int i=0;i<6;i++)
             {
@@ -173,6 +214,28 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
             std::cout<<"Total Number of Neighbours is "<<dP[l].totneigh<<std::endl;
             file << std::endl;
             //break;
+
+            file << "M Matrix"<<std::endl;
+            for(int i=0;i<dP[l].totneigh;i++)
+            {
+                for(int j=0;j<6;j++)
+                {
+                    file<<std::scientific <<dP[l].M[i*dP[l].totneigh+j]<<" ";
+                }
+                file<<std::endl;
+            }
+            file << "W Matrix"<<std::endl;
+            for(int i=0;i<dP[l].totneigh;i++)
+            {
+                for(int j=0;j<dP[l].totneigh;j++)
+                {
+                    if(i==j)
+                        file<<std::scientific <<dP[l].W[i]<<" ";
+                    else
+                        file<<0<<" ";
+                }
+                file<<std::endl;
+            }
             file << "MTW Matrix"<<std::endl;
             for(int i=0;i<6;i++)
             {
@@ -264,5 +327,41 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
         file<<"Total Number of Neighbours in "<<direction[i]<< "Counted Using GPU is "<<dP[partind].neighcount[i]<<std::endl;
     }
     file.close();
+}
+
+void printallvoxel(voxelDetails *dvoxinfo,CalcParameters CalcParam)
+{
+    for(int i=0;i<CalcParam.nbxBox * CalcParam.nbyBox * CalcParam.nbzBox;i++)
+    {
+        std::cout<<"Voxel Number ="<<i<<", Number of Points in the Voxel "<<dvoxinfo[i].count<<std::endl;
+    }
+    // int panch;
+    // std::cin>>panch;
+}
+
+
+void printvoxelDetails(voxelDetails *dvoxinfo,CalcParameters CalcParam,std::string filename)
+{
+
+    std::ofstream file;//(filename);
+    if (std::filesystem::exists(filename)) {
+        std::filesystem::remove(filename);
+        std::cout << "File deleted: " << filename << std::endl;
+    } else {
+        std::cout << "File does not exist: " << filename << std::endl;
+    }
+    file.open(filename,std::ios::app);
+    if (!file.is_open())
+    {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return;
+    }
+    for(int i=0;i<CalcParam.nbxBox * CalcParam.nbyBox;i++)
+    {
+        //std::cout<<"Voxel Number ="<<i<<", Number of Points in the Voxel "<<dvoxinfo[i].count<<std::endl;
+        file<<"Voxel Number ="<<i<<" Voxel Boundary ["<<dvoxinfo[i].xmin<<","<<dvoxinfo[i].xmax<<","<<dvoxinfo[i].ymin<<","<<dvoxinfo[i].ymax<<"]"<<std::endl;
+    }
+    int panch;
+    //std::cin>>panch;
 }
 #endif

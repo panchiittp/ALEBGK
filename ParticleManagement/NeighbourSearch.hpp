@@ -34,18 +34,19 @@ if (i < CalcParam.N && dP[i].active == true)
             for (int j = 0; j < count; j++)
             {
                 int pidx = voxinfo[neighborIndex].particleindex[j];
-                if (pidx != -1 && dP[pidx].active == 1)
+                if (pidx != -1 && dP[pidx].active == true)
                 {
                     double distx = dP[i].x - dP[pidx].x;
                     double disty = dP[i].y - dP[pidx].y;
 
-                    // Compute corrected periodic distance
                     double dist = sqrt(distx * distx + disty * disty);
                     if (dist < CalcParam.radius)
                     {                          
                         dP[i].neighindex[neighIndexCount++] = pidx;                                        
                     }
-                    if (dist > 3*CalcParam.radius)// && dP[pidx].boundary == false)
+                    // Compute corrected periodic distance
+                    
+                    if (dist > 3*CalcParam.radius && dP[pidx].boundary == false)
                     {
                         if (distx >=  Lx / 2.0) distx -= Lx;
                         if (distx <= -Lx / 2.0) distx += Lx;
@@ -123,56 +124,63 @@ __global__ void IdentifyNeighbourType(BGKParticle *dP,CalcParameters CalcParam,D
 
 void findNeighborParticlesPeriodicCPU(BGKParticle *dP, CalcParameters CalcParam, voxelDetails *voxinfo,DomainBoundary Domain)
 {
-for(int i=0;i<CalcParam.N;i++)
-{
-    if (dP[i].active == true)
+    for(int i=0;i<CalcParam.N;i++)
     {
         int voxIndex = dP[i].voxel;
         int x = voxIndex % CalcParam.nbxBox;
         int y = voxIndex / CalcParam.nbxBox;
-
+    
         int neighVoxelCount = 0;
         int neighIndexCount = 0;
     //    int neighTypeCount = 0;
         
         double Lx = (Domain.xright - Domain.xleft);
         double Ly = (Domain.ytop - Domain.ybottom);
-
+        
         // Iterate over neighboring offsets in 2D
+        int count=0;
         for (int dy = -1; dy <= 1; ++dy)
         {
             for (int dx = -1; dx <= 1; ++dx)
             {
                 int nx = (x + dx + CalcParam.nbxBox) % CalcParam.nbxBox;
                 int ny = (y + dy + CalcParam.nbyBox) % CalcParam.nbyBox;
-
+    
                 // Calculate the 1D index of the neighbor voxel
                 int neighborIndex = nx + ny * CalcParam.nbxBox;
                 dP[i].neighVoxel[neighVoxelCount++] = neighborIndex;
-
-                int count = voxinfo[neighborIndex].count;
+    
+                count = voxinfo[neighborIndex].count;
                 for (int j = 0; j < count; j++)
                 {
+                    
                     int pidx = voxinfo[neighborIndex].particleindex[j];
-                    if (pidx != -1 && dP[pidx].active == 1)
+                    
+
+
+                    if (pidx != -1 && dP[pidx].active == true)
                     {
                         double distx = dP[i].x - dP[pidx].x;
                         double disty = dP[i].y - dP[pidx].y;
+                        
 
-                        // Compute corrected periodic distance
                         double dist = sqrt(distx * distx + disty * disty);
                         if (dist < CalcParam.radius)
                         {                          
-                            dP[i].neighindex[neighIndexCount++] = pidx;                                        
+                            dP[i].neighindex[neighIndexCount++] = pidx;         
+                        
+                               
                         }
-                        if (dist > 3*CalcParam.radius)// && dP[pidx].boundary == false)
+                        // Compute corrected periodic distance
+                        
+                        if (dist > 3*CalcParam.radius && dP[pidx].boundary == false)
                         {
                             if (distx >=  Lx / 2.0) distx -= Lx;
                             if (distx <= -Lx / 2.0) distx += Lx;
-
+    
                             if (disty >=  Ly / 2.0) disty -= Ly;
                             if (disty <= -Ly / 2.0) disty += Ly;
-
+    
                             dist = sqrt(distx * distx + disty * disty);
                             if (dist < CalcParam.radius)
                             {
@@ -185,15 +193,58 @@ for(int i=0;i<CalcParam.N;i++)
         }
         dP[i].totvoxel = neighVoxelCount;
         dP[i].totneigh = neighIndexCount;
+        std::cout<<"Completed the neighbour Search voxcount"<<count<<"Tot neigh"<<neighIndexCount<<std::endl;
+
     }
 }
+
+
+void IdentifyNeighbourTypeDeviceCPU(int p, BGKParticle *dP, double Lx,int k)
+{
+    //double dx[180],dy[180],dz[180];
+    // std::cout<<"Total Number of Neighbours "<< dP[p].totneigh<<std::endl;
+
+    for (int i = 0; i < dP[p].totneigh; i++)
+    {
+        int neigh = dP[p].neighindex[i];
+        double dx;
+        if(k==0)
+            dx = (dP[neigh].x - dP[p].x);
+        if(k==1)
+            dx = (dP[neigh].y - dP[p].y);
+        if(k==2)
+            dx = (dP[neigh].z - dP[p].z);            
+        if(dx>Lx/2)
+            dx=dx-Lx;
+        else if (dx<-Lx/2)
+            dx=dx+Lx;
+        else
+            dx=dx;
+        if(dx>0)
+        {
+            dP[p].neightype[i*3+k]=k*2+1;
+            dP[p].neighcount[k*2+1]++;
+        }
+        else if(dx<0)
+        {
+            dP[p].neightype[i*3+k]=k*2+0;
+            dP[p].neighcount[k*2+0]++;
+        }        
+        else
+        {
+            dP[p].neightype[i*3+k]=-1;
+        }                
+        // std::cout<<"Neighbour Type Identified "<<i<<std::endl;
+
+    }
 }
 void IdentifyNeighbourTypeCPU(BGKParticle *dP,CalcParameters CalcParam,DomainBoundary Domain)
 {    
     for(int p=0;p<CalcParam.N;p++)
     {
-        IdentifyNeighbourTypeDevice(p, dP,Domain.xright-Domain.xleft,0);
-        IdentifyNeighbourTypeDevice(p, dP,Domain.ytop-Domain.ybottom,1);
+        // std::cout<<"Working on Neighbour Type Identification for "<<p<<std::endl;
+        IdentifyNeighbourTypeDeviceCPU(p, dP,Domain.xright-Domain.xleft,0);
+        IdentifyNeighbourTypeDeviceCPU(p, dP,Domain.ytop-Domain.ybottom,1);
     }
 }
 

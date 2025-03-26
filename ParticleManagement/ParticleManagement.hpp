@@ -2,6 +2,7 @@
 #define PARTICLEMANAGEMENT_HPP
 
 #include "../Definitions/Definitions2D.hpp"
+
 __global__ void GenerateParticlesKernel(BGKParticle *dP, CalcParameters CalcParam, Parameters Param, DomainBoundary Domain)
 {
     int i = threadIdx.x + blockIdx.x * blockDim.x;
@@ -10,8 +11,8 @@ __global__ void GenerateParticlesKernel(BGKParticle *dP, CalcParameters CalcPara
     // while(i<100)
     if (i < CalcParam.N)
     {
-        int y = i % Param.Nx;
-        int x = i / Param.Nx;
+        int y = i / Param.Nx;
+        int x = i % Param.Nx;
 
         dP[i].x = Domain.xleft + (double)x * CalcParam.dx;
         dP[i].y = Domain.ybottom + (double)y * CalcParam.dy;
@@ -21,16 +22,16 @@ __global__ void GenerateParticlesKernel(BGKParticle *dP, CalcParameters CalcPara
             dP[i].boundary = true;
 
         dP[i].totneigh = 0;
-        dP[i].active = true;
+        dP[i].active= true;
 
-        for (int k = 0; k < 3 * 180; ++k)
+        for (int k = 0; k < 3 * 50; ++k)
         {
             dP[i].neightype[k] = -1;            
         }        
     }
 }
 
-void GenerateParticlesKernelCPU(BGKParticle *dP, CalcParameters CalcParam, Parameters Param, DomainBoundary Domain)
+void GenerateParticlesCPU(BGKParticle *dP, CalcParameters CalcParam, Parameters Param, DomainBoundary Domain)
 {
     
 
@@ -51,7 +52,7 @@ void GenerateParticlesKernelCPU(BGKParticle *dP, CalcParameters CalcParam, Param
         dP[i].totneigh = 0;
         dP[i].active = true;
 
-        for (int k = 0; k < 3 * 180; ++k)
+        for (int k = 0; k < 3 * 50; ++k)
         {
             dP[i].neightype[k] = -1;            
         }        
