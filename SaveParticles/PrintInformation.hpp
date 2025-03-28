@@ -39,27 +39,27 @@ void printvoxelinfo(voxelDetails *dvoxinfo, int i)
 
 void printparticularparticle(int ind, BGKParticle *dP)
 {
-    std::cout << "Point: " << ind << "(" << dP[ind].x << "," << dP[ind].y << "," << dP[ind].z << ")" << std::endl;
+    std::cout << "Point: " << ind << "(" << dP[ind].pos.x << "," << dP[ind].pos.y << "," << dP[ind].pos.z << ")" << std::endl;
     std::cout << "Active: " << dP[ind].active << ", Boundary: " << dP[ind].boundary << ",valid g " << dP[ind].validg << ")" << std::endl;
 
 }
 
 void printneighanddist(int ind, BGKParticle *dP)
 {
-    std::cout << "Point: " << ind << "(" << dP[ind].x << "," << dP[ind].y << "," << dP[ind].z << ")" << std::endl;
+    std::cout << "Point: " << ind << "(" << dP[ind].pos.x << "," << dP[ind].pos.y << "," << dP[ind].pos.z << ")" << std::endl;
     std::cout << "List of Neighbours" << std::endl;
     std::cout << "Number of Neighbours :" <<  dP[ind].totneigh << std::endl;
     for (int i = 0; i < dP[ind].totneigh; i++)
     {
         int s = dP[ind].neighindex[i];
-        std::cout << "Neighbour " << i << " Point: " << s << "(" << dP[s].x << "," << dP[s].y << "," << dP[s].z << ") ";
-        std::cout << "Distance: (dx,dy,dz) = (" << dP[s].x - dP[ind].x << "," << dP[s].y - dP[ind].y << "," << dP[s].z - dP[ind].z << ")" << std::endl;
+        std::cout << "Neighbour " << i << " Point: " << s << "(" << dP[s].pos.x << "," << dP[s].pos.y << "," << dP[s].pos.z << ") ";
+        std::cout << "Distance: (dx,dy,dz) = (" << dP[s].pos.x - dP[ind].pos.x << "," << dP[s].pos.y - dP[ind].pos.y << "," << dP[s].pos.z - dP[ind].pos.z << ")" << std::endl;
     }
 }
 
 void printneighvoxel(int ind, BGKParticle *dP)
 {
-    std::cout << "Point: " << ind << "(" << dP[ind].x << "," << dP[ind].y << "," << dP[ind].z << ")" << std::endl;
+    std::cout << "Point: " << ind << "(" << dP[ind].pos.x << "," << dP[ind].pos.y << "," << dP[ind].pos.z << ")" << std::endl;
     std::cout << "List of Voxels" << std::endl;
     std::cout << "Number of Neighbour Voxels :" <<  dP[ind].totvoxel << std::endl;
     for (int i = 0; i < dP[ind].totvoxel; i++)
@@ -89,7 +89,7 @@ void printallparticleneigh(BGKParticle *dP,CalcParameters CalcParam,std::string 
     int maxneigh=0;
     for(int ind=0;ind<CalcParam.N;ind++)
     {
-        file << "Point: " << ind << "(" << dP[ind].x << "," << dP[ind].y << "," << dP[ind].z << ") Total Neighbours = " <<dP[ind].totneigh<< std::endl;
+        file << "Point: " << ind << "(" << dP[ind].pos.x << "," << dP[ind].pos.y << "," << dP[ind].pos.z << ") Total Neighbours = " <<dP[ind].totneigh<< std::endl;
         if(maxneigh<dP[ind].totneigh)
             maxneigh=dP[ind].totneigh;
     }
@@ -112,7 +112,7 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
         return;
     }
     
-    std::string direction[]={"Left","Right","Bottom","Top","Front","Back"};
+    std::string direction[]={"Left","Right","Bottom","Top","Center","Top","Back"};
 
     int maxneigh = 0;
     for (int l = 0; l < CalcParam.N; l++)
@@ -126,7 +126,7 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
         if (l == partind)
         {
             file << l << ", " << (dP[l].boundary? "Boundary": "Interior") << "Neigbhour Radius "<<CalcParam.radius
-                        << " (" << dP[l].x << " ," << dP[l].y << ", " << dP[l].z << ")"
+                        << " (" << dP[l].pos.x << " ," << dP[l].pos.y << ", " << dP[l].pos.z << ")"
                         << " My voxel: " << dP[l].voxel << " My Status : " << std::endl;
             file << " Number of Neighbour Voxel: " << dP[l].totvoxel << std::endl;
             for (int j = 0; j < dP[l].totvoxel; j++)
@@ -140,18 +140,18 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
             int totneigh[6]={0,0,0,0,0,0};
             for (int j = 0; j < dP[l].totneigh; j++)
             {
-                double dx=dP[l].x-dP[dP[l].neighindex[j]].x;
-                double dy=dP[l].y-dP[dP[l].neighindex[j]].y;
-                double dz=dP[l].z-dP[dP[l].neighindex[j]].z;
+                double dx=-(dP[l].pos.x-dP[dP[l].neighindex[j]].pos.x);
+                double dy=-(dP[l].pos.y-dP[dP[l].neighindex[j]].pos.y);
+                double dz=-(dP[l].pos.z-dP[dP[l].neighindex[j]].pos.z);
                 file <<std::scientific<< "Neighbour Number = "<<j<<std::endl<< "Neighbour Index " <<dP[l].neighindex[j] << std::endl<< "From voxel:  " << dP[dP[l].neighindex[j]].voxel <<std::endl
-                            << "Point = (" << dP[dP[l].neighindex[j]].x<<","<<dP[dP[l].neighindex[j]].y<<","<<dP[dP[l].neighindex[j]].z<<")"   << std::endl                         
+                            << "Point = (" << dP[dP[l].neighindex[j]].pos.x<<","<<dP[dP[l].neighindex[j]].pos.y<<","<<dP[dP[l].neighindex[j]].pos.z<<")"   << std::endl                         
                             << "(dx,dy,dz) = (" << dx<<","<<dy<<","<<dz<<")"<< std::endl
-                            << "(dx*dx,dy*dy,dz*dz) = (" << dx*dx<<","<<dy*dy<<","<<dz*dz<<")"<< std::endl
+                            << "0.5*(dx*dx,dy*dy,dz*dz) = (" << 0.5*dx*dx<<","<<0.5*dy*dy<<","<<0.5*dz*dz<<")"<< std::endl
                             << "(dx*dy,dx*dz,dy*dz) = (" << dx*dy<<","<<dx*dz<<","<<dy*dz<<")"<< std::endl
                             <<"Distance = " << sqrt(dx*dx+dy*dy+dz*dz)<< std::endl
                             <<"Alpha = " << Constant.alpha<< std::endl
-                            <<"Exp Term ="<<Constant.alpha*sqrt(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius)
-                            <<"Weight = " << std::exp(-Constant.alpha*sqrt(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius))<< std::endl<< "Type: "<<std::endl;                                         
+                            <<"Exp Term ="<<Constant.alpha*(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius)
+                            <<"Weight = " << std::exp(-Constant.alpha*(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius))<< std::endl<< "Type: "<<std::endl;                                         
                 for(int k=3*j;k<3*(j+1);k++)
                 {
                     file<<"k="<<k<<" dP[l].neightype[k] = "<<dP[l].neightype[k]<<" ";
@@ -197,14 +197,14 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
                         file<<std::endl;
                 }
                 
-                file<<"M Matrix"<<std::endl;
-                for(int k=0;k<6;k++)
-                {
-                    file<<dP[l].M[j*6+k]<<" ";
-                }              
-                file<<std::endl<<"W Matrix"<<std::endl;
-                file<<dP[l].W[j];
-                file << std::endl;
+                // file<<"M Matrix"<<std::endl;
+                // for(int k=0;k<6;k++)
+                // {
+                //     file<<dP[l].M[j*6+k]<<" ";
+                // }              
+                // file<<std::endl<<"W Matrix"<<std::endl;
+                // file<<dP[l].W[j];
+                // file << std::endl;
             }
             for(int i=0;i<6;i++)
             {
@@ -215,53 +215,131 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
             file << std::endl;
             //break;
 
-            file << "M Matrix"<<std::endl;
-            for(int i=0;i<dP[l].totneigh;i++)
+            // file << "M Matrix"<<std::endl;
+            // for(int i=0;i<dP[l].totneigh;i++)
+            // {
+            //     for(int j=0;j<6;j++)
+            //     {
+            //         file<<std::scientific <<dP[l].M[i*6+j]<<" ";
+            //     }
+            //     file<<std::endl;
+            // }
+            // file << "W Matrix"<<std::endl;
+            // for(int i=0;i<dP[l].totneigh;i++)
+            // {
+            //     for(int j=0;j<dP[l].totneigh;j++)
+            //     {
+            //         if(i==j)
+            //             file<<std::scientific <<dP[l].W[i]<<" ";
+            //         else
+            //             file<<0<<" ";
+            //     }
+            //     file<<std::endl;
+            // }
+            file<<"Listing out the List of Neighbours of "<<myflag<<" type"<<"Total Neighbours = "<<dP[l].neighcount[myflag]<<std::endl;
+            file<<"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"<<std::endl;
+            for (int j = 0; j < dP[l].totneigh; j++)
             {
-                for(int j=0;j<6;j++)
+                for(int k=3*j;k<3*(j+1);k++)
                 {
-                    file<<std::scientific <<dP[l].M[i*dP[l].totneigh+j]<<" ";
+                    if(dP[l].neightype[k]==myflag)
+                    {
+                        double dx=-(dP[l].pos.x-dP[dP[l].neighindex[j]].pos.x);
+                        double dy=-(dP[l].pos.y-dP[dP[l].neighindex[j]].pos.y);
+                        double dz=-(dP[l].pos.z-dP[dP[l].neighindex[j]].pos.z);
+                        file <<std::scientific<< "Neighbour Number = "<<j<<std::endl<< "Neighbour Index " <<dP[l].neighindex[j] << std::endl<< "From voxel:  " << dP[dP[l].neighindex[j]].voxel <<std::endl
+                                    << "Point = (" << dP[dP[l].neighindex[j]].pos.x<<","<<dP[dP[l].neighindex[j]].pos.y<<","<<dP[dP[l].neighindex[j]].pos.z<<")"   << std::endl                         
+                                    << "(dx,dy,dz) = (" << dx<<","<<dy<<","<<dz<<")"<< std::endl
+                                    << "0.5*(dx*dx,dy*dy,dz*dz) = (" << 0.5*dx*dx<<","<<0.5*dy*dy<<","<<0.5*dz*dz<<")"<< std::endl
+                                    << "(dx*dy,dx*dz,dy*dz) = (" << dx*dy<<","<<dx*dz<<","<<dy*dz<<")"<< std::endl
+                                    <<"Distance = " << sqrt(dx*dx+dy*dy+dz*dz)<< std::endl
+                                    <<"Alpha = " << Constant.alpha<< std::endl
+                                    <<"Exp Term ="<<Constant.alpha*(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius)
+                                    <<"Weight = " << std::exp(-Constant.alpha*(dx*dx+dy*dy+dz*dz)/(CalcParam.radius*CalcParam.radius))<< std::endl<< "Type: "<<std::endl;  
+                    }
                 }
-                file<<std::endl;
-            }
-            file << "W Matrix"<<std::endl;
-            for(int i=0;i<dP[l].totneigh;i++)
-            {
-                for(int j=0;j<dP[l].totneigh;j++)
-                {
-                    if(i==j)
-                        file<<std::scientific <<dP[l].W[i]<<" ";
-                    else
-                        file<<0<<" ";
-                }
-                file<<std::endl;
             }
             file << "MTW Matrix"<<std::endl;
+            int row;
+            if(myflag==4)
+                row=dP[l].totneigh;
+            else
+                row=dP[l].neighcount[myflag];
             for(int i=0;i<6;i++)
             {
-                for(int j=0;j<dP[l].totneigh;j++)
+                for(int j=0;j<row;j++)
                 {
-                    file<<dP[l].MTW[i*dP[l].totneigh+j]<<" ";
+                    file<<dP[l].MTW[i*row+j]<<" ";
                 }
                 file<<std::endl;
             }
+            file << "MTWM Matrix"<<std::endl;
             
-            file << "MTWM Inv Matrix"<<std::endl;
             for(int i=0;i<6;i++)
             {
                 for(int j=0;j<6;j++)
                 {
-                    if(j>=i)
-                    {
-                        file<<dP[l].MTWM[6*i+j-i*(i+1)/2]<<" ";
-                    }
-                    else
-                    {
-                        file<<dP[l].MTWM[6*j+i-j*(j+1)/2]<<" ";
-                    }
-                }
-                file<<std::endl;
+                    file<<dP[l].MTWM[i*6+j]<<" ";
+                 }
+                 file<<std::endl;
             }
+            
+
+            file << "MTWM Inv Matrix"<<std::endl;
+            
+            for(int i=0;i<6;i++)
+            {
+                for(int j=0;j<6;j++)
+                {
+                    file<<dP[l].MTWMInv[i*6+j]<<" ";
+                 }
+                 file<<std::endl;
+            }
+
+
+            file << "Identity Matrix"<<std::endl;
+            
+            for(int i=0;i<6;i++)
+            {
+                for(int j=0;j<6;j++)
+                {
+                    file<<dP[l].Identity[i*6+j]<<" ";
+                 }
+                 file<<std::endl;
+            }
+
+            for(int flag=0;flag<5;flag++)
+            {
+                if(flag==4)
+                    row=dP[l].totneigh;
+                else
+                    row=dP[l].neighcount[flag];
+                file << "inv(MTWM)MTW Matrix "<<direction[flag]<<std::endl;
+                for(int i=0;i<6;i++)
+                {
+                    for(int j=0;j<row;j++)
+                    {
+                        file<<dP[l].MTWMInvMTW[flag*6*50+i*row+j]<<" ";
+                    }
+                    file<<std::endl;
+                }
+            }
+            // file << "MTWM Inv Matrix"<<std::endl;
+            // for(int i=0;i<6;i++)
+            // {
+            //     for(int j=0;j<6;j++)
+            //     {
+            //         if(j>=i)
+            //         {
+            //             file<<dP[l].MTWM[6*i+j-i*(i+1)/2]<<" ";
+            //         }
+            //         else
+            //         {
+            //             file<<dP[l].MTWM[6*j+i-j*(j+1)/2]<<" ";
+            //         }
+            //     }
+            //     file<<std::endl;
+            // }
 
             // file << "MTW Final Matrix"<<std::endl;
             // for(int i=0;i<10;i++)
@@ -273,9 +351,9 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
             //     file<<std::endl;
             // }
             file << "RHS"<<std::endl;
-            for(int i=0;i<dP[l].totneigh;i++)
+            for(int i=0;i<row;i++)
             {
-                file<<std::scientific <<dP[l].rhs[i]<<" "<<dP[l].g[0];
+                file<<std::scientific <<dP[l].rhs[i];//<<" "<<dP[l].g[0];
                 file<<std::endl;
             }
             // file << "Check RHS"<<std::endl;
@@ -296,7 +374,7 @@ void printperiodicneigh(BGKParticle *dP, CalcParameters CalcParam, int partind, 
             //     }
             // }
             file << "gWENO"<<std::endl;
-            for(int i=0;i<70;i++)
+            for(int i=0;i<30;i++)
             {
                 file<<std::scientific << dP[l].gWENO[i];
                 file<<std::endl;
@@ -361,7 +439,7 @@ void printvoxelDetails(voxelDetails *dvoxinfo,CalcParameters CalcParam,std::stri
         //std::cout<<"Voxel Number ="<<i<<", Number of Points in the Voxel "<<dvoxinfo[i].count<<std::endl;
         file<<"Voxel Number ="<<i<<" Voxel Boundary ["<<dvoxinfo[i].xmin<<","<<dvoxinfo[i].xmax<<","<<dvoxinfo[i].ymin<<","<<dvoxinfo[i].ymax<<"]"<<std::endl;
     }
-    int panch;
+    //int panch;
     //std::cin>>panch;
 }
 #endif

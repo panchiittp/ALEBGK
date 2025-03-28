@@ -13,24 +13,24 @@ __global__ void applyInitialConditionsKernel(BGKParticle *dP, CalcParameters Cal
         double Uy = IC.Uy;
         double T = IC.T;
         double rho = IC.rho;
-        dP[particleIndex].ux = Ux;
-        dP[particleIndex].uy = Uy;
+        dP[particleIndex].vel.x = Ux;
+        dP[particleIndex].vel.y = Uy;
         dP[particleIndex].T = T;
         dP[particleIndex].rho = rho;
-        if(dP[particleIndex].y>=0.25 && dP[particleIndex].y<=0.75)
+        if(dP[particleIndex].pos.y>=0.25 && dP[particleIndex].pos.y<=0.75)
         {
             dP[particleIndex].rho = 2;
             dP[particleIndex].T = 2.5/dP[particleIndex].rho;
-            dP[particleIndex].ux = -0.5+0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
-            dP[particleIndex].uy = 0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.x = -0.5+0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.y = 0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
 
         }        
         else
         {
             dP[particleIndex].rho = 1;
             dP[particleIndex].T = 2.5/dP[particleIndex].rho;
-            dP[particleIndex].ux = 0.5+0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
-            dP[particleIndex].uy = 0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.x = 0.5+0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.y = 0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
         }
         
             for (int j = 0; j < Param.Nv; ++j)
@@ -38,7 +38,7 @@ __global__ void applyInitialConditionsKernel(BGKParticle *dP, CalcParameters Cal
                 for (int i = 0; i < Param.Nv; ++i)
                 {
                     int linearIndex = i + Param.Nv * j;
-                    dP[particleIndex].g[linearIndex] = rho * std::exp(-(std::pow(CalcParam.vRange[i] - dP[particleIndex].ux, 2) + std::pow(CalcParam.vRange[j] - dP[particleIndex].uy, 2)) / (2 * Constant.R * T)) / std::pow((2 * Constant.R * 3.14159 * T), 1.5); // g1
+                    dP[particleIndex].g[linearIndex] = rho * std::exp(-(std::pow(CalcParam.vRange[i] - dP[particleIndex].vel.x, 2) + std::pow(CalcParam.vRange[j] - dP[particleIndex].vel.y, 2)) / (2 * Constant.R * T)) / std::pow((2 * Constant.R * 3.14159 * T), 1.5); // g1
                     dP[particleIndex].g[linearIndex + (Param.Nv * Param.Nv)] = Constant.R * T * dP[particleIndex].g[linearIndex]; //g2
                     //printf("gLinear Thread %d: dP[%d].rhs[%d] = %e\n", particleIndex, k, linearIndex, dP[particleIndex].g[linearIndex]);  
                     dP[particleIndex].gt[linearIndex] = dP[particleIndex].g[linearIndex];
@@ -58,24 +58,24 @@ void applyInitialConditionsCPU(BGKParticle *dP, CalcParameters CalcParam, Parame
         double Uy = IC.Uy;
         double T = IC.T;
         double rho = IC.rho;
-        dP[particleIndex].ux = Ux;
-        dP[particleIndex].uy = Uy;
+        dP[particleIndex].vel.x = Ux;
+        dP[particleIndex].vel.x = Uy;
         dP[particleIndex].T = T;
         dP[particleIndex].rho = rho;
-        if(dP[particleIndex].y>=0.25 && dP[particleIndex].y<=0.75)
+        if(dP[particleIndex].pos.y>=0.25 && dP[particleIndex].pos.y<=0.75)
         {
             dP[particleIndex].rho = 2;
             dP[particleIndex].T = 2.5/dP[particleIndex].rho;
-            dP[particleIndex].ux = -0.5+0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
-            dP[particleIndex].uy = 0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.x = -0.5+0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.y = 0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
 
         }        
         else
         {
             dP[particleIndex].rho = 1;
             dP[particleIndex].T = 2.5/dP[particleIndex].rho;
-            dP[particleIndex].ux = 0.5+0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
-            dP[particleIndex].uy = 0.01*sin(2*PI*dP[particleIndex].x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.x = 0.5+0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
+            dP[particleIndex].vel.y = 0.01*sin(2*PI*dP[particleIndex].pos.x);//*sin(2*PI*dP[particleIndex].y);
         }
         // std::cout<<"Applying Initial Conditions for "<<particleIndex<<std::endl;
            for (int j = 0; j < Param.Nv; ++j)
@@ -83,7 +83,7 @@ void applyInitialConditionsCPU(BGKParticle *dP, CalcParameters CalcParam, Parame
                 for (int i = 0; i < Param.Nv; ++i)
                 {
                     int linearIndex = i + Param.Nv * j;
-                    dP[particleIndex].g[linearIndex] = rho * std::exp(-(std::pow(CalcParam.vRange[i] - dP[particleIndex].ux, 2) + std::pow(CalcParam.vRange[j] - dP[particleIndex].uy, 2)) / (2 * Constant.R * T)) / std::pow((2 * Constant.R * 3.14159 * T), 1.5); // g1
+                    dP[particleIndex].g[linearIndex] = rho * std::exp(-(std::pow(CalcParam.vRange[i] - dP[particleIndex].vel.x, 2) + std::pow(CalcParam.vRange[j] - dP[particleIndex].vel.y, 2)) / (2 * Constant.R * T)) / std::pow((2 * Constant.R * 3.14159 * T), 1.5); // g1
                     dP[particleIndex].g[linearIndex + (Param.Nv * Param.Nv)] = Constant.R * T * dP[particleIndex].g[linearIndex]; //g2
                     //printf("gLinear Thread %d: dP[%d].rhs[%d] = %e\n", particleIndex, k, linearIndex, dP[particleIndex].g[linearIndex]);  
                     dP[particleIndex].gt[linearIndex] = dP[particleIndex].g[linearIndex];

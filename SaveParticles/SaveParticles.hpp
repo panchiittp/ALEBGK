@@ -19,7 +19,7 @@ void writeVTKFile(const std::string &filename, BGKParticle *particles, int numPa
     file << "POINTS " << numParticles << " float" << std::endl;
     for (int i = 0; i < numParticles; ++i)
     {
-        file << particles[i].x << " " << particles[i].y << " " << particles[i].z << std::endl;
+        file << particles[i].pos.x << " " << particles[i].pos.y << " " << particles[i].pos.z << std::endl;
     }
 
     // Write the point data (e.g., active status)
@@ -34,7 +34,7 @@ void writeVTKFile(const std::string &filename, BGKParticle *particles, int numPa
     file << "LOOKUP_TABLE default" << std::endl;
     for (int i = 0; i < numParticles; ++i)
     {
-        file << particles[i].ux<< std::endl;
+        file << particles[i].vel.x<< std::endl;
     }
     // file << "VECTORS velocity float" << std::endl;
     // for (int i = 0; i < numParticles; ++i)
@@ -61,7 +61,7 @@ void SaveParticleForMatlab(const std::string &filename, BGKParticle *particles, 
     //file << "POINTS " << numParticles << " float" << std::endl;
     for (int i = 0; i < numParticles; ++i)
     {
-        file << std::fixed << std::setprecision(20)<<particles[i].x << " " << particles[i].y << " " << particles[i].z << " " << particles[i].ux  << " " << particles[i].uy << " "<< particles[i].uz << " "  <<particles[i].voxel<< std::endl;
+        file << std::fixed << std::setprecision(20)<<particles[i].pos.x << " " << particles[i].pos.y << " " << particles[i].pos.z << " " << particles[i].vel.x  << " " << particles[i].vel.y << " "<< particles[i].vel.z << " "  <<particles[i].voxel<< std::endl;
     }
     file.close();
     std::cout << "Particle Saved for MATLAB: " << filename << std::endl;
@@ -80,7 +80,7 @@ void SaveNeighbourParticleForMatlab(const std::string &filename, BGKParticle *pa
     for (int i = 0; i < particles[ind].totneigh; ++i)
     {
         int k=particles[ind].neighindex[i];
-        file << particles[k].x << " " << particles[k].y << " " << particles[k].z << " " << particles[k].z<< std::endl;
+        file << particles[k].pos.x<<" " << particles[k].pos.y << " " << particles[k].pos.z << " " << particles[k].pos.z<< std::endl;
     }
     file.close();
     std::cout << "Neighbour Particle Saved for MATLAB: " << filename << std::endl;
@@ -101,7 +101,7 @@ void SavePeriodicNeighbourParticleForMatlab(const std::string &filename, BGKPart
         int k=particles[ind].neighindex[i];
         for(int s=3*i;s<3*(i+1);s++)
             if(particles[ind].neightype[s]==neightype)
-                file << particles[k].x << " " << particles[k].y << " " << particles[k].z << std::endl;
+                file << particles[k].pos.x << " " << particles[k].pos.y << " " << particles[k].pos.z << std::endl;
     }
 
     

@@ -88,6 +88,7 @@ void GPUSolvers()
     cudaEventRecord(stop, 0);
     cudaEventSynchronize(stop);
     cudaDeviceSynchronize();
+    SortNeighbours<<<numBlocks, blockSize>>>(dP, CalcParam);
     // IdentifyNeighbourType<<<numBlocks, blockSize>>>(dP, CalcParam,Domain);
     cudaDeviceSynchronize();
     printallparticleneigh(dP,CalcParam,"AllParticleInformationGPU.dat");
@@ -146,13 +147,13 @@ void GPUSolvers()
         cudaEventRecord(start, 0);        
         
         std::cout << "Working on MLS Method Kernel" << std::endl;
-        
+        cudaDeviceSetLimit(cudaLimitMallocHeapSize, 64 * 1024 * 1024);
         // for(int flag=0;flag<5;flag++)
         // {    
-            int flag=myflag;
-            ConstructCenterMMatrixKernel<<<numBlocks1, blockSize1>>>(dP, Param, CalcParam, Constant,Domain,flag);
+        //    int flag=myflag;
+            ConstructCenterMMatrixKernel<<<numBlocks1, blockSize1>>>(dP, Param, CalcParam, Constant,Domain);
             cudaDeviceSynchronize();
-        // }
+        //  }
 
         
 

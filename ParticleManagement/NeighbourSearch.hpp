@@ -1,6 +1,48 @@
 #ifndef NEIGHBOURSEARCH_HPP
 #define NEIGHBOURSEARCH_HPP
 
+__global__ void SortNeighbours(BGKParticle *dP, CalcParameters CalcParam)
+{
+    int ind = blockIdx.x * blockDim.x + threadIdx.x;
+
+    if (ind < CalcParam.N && dP[ind].active == true)
+    {
+        int n=dP[ind].totneigh;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (dP[ind].neighindex[j] > dP[ind].neighindex[j + 1]) {
+                    // Swap arr[j] and arr[j+1]
+                    int temp = dP[ind].neighindex[j];
+                    dP[ind].neighindex[j] = dP[ind].neighindex[j + 1];
+                    dP[ind].neighindex[j + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+
+void SortNeighboursCPU(BGKParticle *dP, CalcParameters CalcParam)
+{
+    for (int ind=0;ind < CalcParam.N;ind++)
+    {
+        if(dP[ind].active == true)
+        {
+            int n=dP[ind].totneigh;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (dP[ind].neighindex[j] > dP[ind].neighindex[j + 1]) {
+                        // Swap arr[j] and arr[j+1]
+                        int temp = dP[ind].neighindex[j];
+                        dP[ind].neighindex[j] = dP[ind].neighindex[j + 1];
+                        dP[ind].neighindex[j + 1] = temp;
+                    }
+                }
+            }
+        }
+    }
+}
+
 __global__ void findNeighborParticlesPeriodic(BGKParticle *dP, CalcParameters CalcParam, voxelDetails *voxinfo,DomainBoundary Domain)
 {
     int i = blockIdx.x * blockDim.x + threadIdx.x;
@@ -36,8 +78,8 @@ if (i < CalcParam.N && dP[i].active == true)
                 int pidx = voxinfo[neighborIndex].particleindex[j];
                 if (pidx != -1 && dP[pidx].active == true)
                 {
-                    double distx = dP[i].x - dP[pidx].x;
-                    double disty = dP[i].y - dP[pidx].y;
+                    double distx = dP[i].pos.x - dP[pidx].pos.x;
+                    double disty = dP[i].pos.y - dP[pidx].pos.y;
 
                     double dist = sqrt(distx * distx + disty * disty);
                     if (dist < CalcParam.radius)
@@ -80,11 +122,11 @@ __device__ __host__ void IdentifyNeighbourTypeDevice(int p, BGKParticle *dP, dou
         int neigh = dP[p].neighindex[i];
         double dx;
         if(k==0)
-            dx = (dP[neigh].x - dP[p].x);
+            dx = (dP[neigh].pos.x - dP[p].pos.x);
         if(k==1)
-            dx = (dP[neigh].y - dP[p].y);
+            dx = (dP[neigh].pos.y - dP[p].pos.y);
         if(k==2)
-            dx = (dP[neigh].z - dP[p].z);            
+            dx = (dP[neigh].pos.z - dP[p].pos.z);            
         if(dx>Lx/2)
             dx=dx-Lx;
         else if (dx<-Lx/2)
@@ -160,8 +202,8 @@ void findNeighborParticlesPeriodicCPU(BGKParticle *dP, CalcParameters CalcParam,
 
                     if (pidx != -1 && dP[pidx].active == true)
                     {
-                        double distx = dP[i].x - dP[pidx].x;
-                        double disty = dP[i].y - dP[pidx].y;
+                        double distx = dP[i].pos.x - dP[pidx].pos.x;
+                        double disty = dP[i].pos.y - dP[pidx].pos.y;
                         
 
                         double dist = sqrt(distx * distx + disty * disty);
@@ -209,11 +251,11 @@ void IdentifyNeighbourTypeDeviceCPU(int p, BGKParticle *dP, double Lx,int k)
         int neigh = dP[p].neighindex[i];
         double dx;
         if(k==0)
-            dx = (dP[neigh].x - dP[p].x);
+            dx = (dP[neigh].pos.x - dP[p].pos.x);
         if(k==1)
-            dx = (dP[neigh].y - dP[p].y);
+            dx = (dP[neigh].pos.y - dP[p].pos.y);
         if(k==2)
-            dx = (dP[neigh].z - dP[p].z);            
+            dx = (dP[neigh].pos.z - dP[p].pos.z);            
         if(dx>Lx/2)
             dx=dx-Lx;
         else if (dx<-Lx/2)

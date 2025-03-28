@@ -3,335 +3,263 @@
 43 44 45 53 54 55 63 64 65 
  Number of Neigbours 37
 Neighbour Number = 0
-Neighbour Index 1197
-From voxel:  44
-Point = (4.600000e-01,4.800000e-01,0.000000e+00)
-(dx,dy,dz) = (2.000000e-02,6.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,3.600000e-03,0.000000e+00)
+Neighbour Index 1097
+From voxel:  54
+Point = (4.200000e-01,5.200000e-01,0.000000e+00)
+(dx,dy,dz) = (-6.000000e-02,-2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (1.800000e-03,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (1.200000e-03,0.000000e+00,0.000000e+00)
 Distance = 6.324555e-02
 Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
+Exp Term =4.897959e+00Weight = 7.461796e-03
 Type: 
 k=0 dP[l].neightype[k] = 0 Left
 k=1 dP[l].neightype[k] = 2 Bottom
 k=2 dP[l].neightype[k] = -1 
-M Matrix
-1.000000e+00 -2.000000e-02 2.000000e-04 -6.000000e-02 1.200000e-03 1.800000e-03 
-W Matrix
--0.000000e+00
 Neighbour Number = 1
-Neighbour Index 1248
-From voxel:  44
-Point = (4.800000e-01,4.800000e-01,0.000000e+00)
-(dx,dy,dz) = (0.000000e+00,6.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (0.000000e+00,3.600000e-03,0.000000e+00)
+Neighbour Index 1098
+From voxel:  54
+Point = (4.200000e-01,5.400000e-01,0.000000e+00)
+(dx,dy,dz) = (-6.000000e-02,-0.000000e+00,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (1.800000e-03,0.000000e+00,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
 Distance = 6.000000e-02
 Alpha = 6.000000e+00
-Exp Term =7.346939e+01Weight = 1.237800e-32
+Exp Term =4.408163e+00Weight = 1.217752e-02
 Type: 
-k=3 dP[l].neightype[k] = -1 
-k=4 dP[l].neightype[k] = 2 Bottom
+k=3 dP[l].neightype[k] = 0 Left
+k=4 dP[l].neightype[k] = -1 
 k=5 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-0.000000e+00
 Neighbour Number = 2
-Neighbour Index 1299
-From voxel:  45
-Point = (5.000000e-01,4.800000e-01,0.000000e+00)
-(dx,dy,dz) = (-2.000000e-02,6.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,3.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,-0.000000e+00,0.000000e+00)
-Distance = 6.324555e-02
-Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
-Type: 
-k=6 dP[l].neightype[k] = 1 Right
-k=7 dP[l].neightype[k] = 2 Bottom
-k=8 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.326485e-34
-Neighbour Number = 3
-Neighbour Index 1097
+Neighbour Index 1099
 From voxel:  54
-Point = (4.200000e-01,5.200000e-01,0.000000e+00)
-(dx,dy,dz) = (6.000000e-02,2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (3.600000e-03,4.000000e-04,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (1.200000e-03,0.000000e+00,0.000000e+00)
+Point = (4.200000e-01,5.600000e-01,0.000000e+00)
+(dx,dy,dz) = (-6.000000e-02,2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (1.800000e-03,2.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,0.000000e+00,-0.000000e+00)
 Distance = 6.324555e-02
 Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
+Exp Term =4.897959e+00Weight = 7.461796e-03
+Type: 
+k=6 dP[l].neightype[k] = 0 Left
+k=7 dP[l].neightype[k] = 3 Top
+k=8 dP[l].neightype[k] = -1 
+Neighbour Number = 3
+Neighbour Index 1147
+From voxel:  54
+Point = (4.400000e-01,5.000000e-01,0.000000e+00)
+(dx,dy,dz) = (-4.000000e-02,-4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,8.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (1.600000e-03,0.000000e+00,0.000000e+00)
+Distance = 5.656854e-02
+Alpha = 6.000000e+00
+Exp Term =3.918367e+00Weight = 1.987351e-02
 Type: 
 k=9 dP[l].neightype[k] = 0 Left
 k=10 dP[l].neightype[k] = 2 Bottom
 k=11 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.326485e-34
 Neighbour Number = 4
-Neighbour Index 1098
-From voxel:  54
-Point = (4.200000e-01,5.400000e-01,0.000000e+00)
-(dx,dy,dz) = (6.000000e-02,0.000000e+00,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (3.600000e-03,0.000000e+00,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
-Distance = 6.000000e-02
-Alpha = 6.000000e+00
-Exp Term =7.346939e+01Weight = 1.237800e-32
-Type: 
-k=12 dP[l].neightype[k] = 0 Left
-k=13 dP[l].neightype[k] = -1 
-k=14 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.237800e-32
-Neighbour Number = 5
-Neighbour Index 1099
-From voxel:  54
-Point = (4.200000e-01,5.600000e-01,0.000000e+00)
-(dx,dy,dz) = (6.000000e-02,-2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (3.600000e-03,4.000000e-04,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,0.000000e+00,-0.000000e+00)
-Distance = 6.324555e-02
-Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
-Type: 
-k=15 dP[l].neightype[k] = 0 Left
-k=16 dP[l].neightype[k] = 3 Top
-k=17 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.326485e-34
-Neighbour Number = 6
-Neighbour Index 1147
-From voxel:  54
-Point = (4.400000e-01,5.000000e-01,0.000000e+00)
-(dx,dy,dz) = (4.000000e-02,4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,1.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (1.600000e-03,0.000000e+00,0.000000e+00)
-Distance = 5.656854e-02
-Alpha = 6.000000e+00
-Exp Term =6.926760e+01Weight = 8.269176e-31
-Type: 
-k=18 dP[l].neightype[k] = 0 Left
-k=19 dP[l].neightype[k] = 2 Bottom
-k=20 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 1.000000e+00 0.000000e+00 0.000000e+00 -6.000000e-02 -0.000000e+00 
-W Matrix
-8.269176e-31
-Neighbour Number = 7
 Neighbour Index 1148
 From voxel:  54
 Point = (4.400000e-01,5.200000e-01,0.000000e+00)
-(dx,dy,dz) = (4.000000e-02,2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,4.000000e-04,0.000000e+00)
+(dx,dy,dz) = (-4.000000e-02,-2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (8.000000e-04,0.000000e+00,0.000000e+00)
 Distance = 4.472136e-02
 Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
+Exp Term =2.448980e+00Weight = 8.638169e-02
 Type: 
-k=21 dP[l].neightype[k] = 0 Left
-k=22 dP[l].neightype[k] = 2 Bottom
-k=23 dP[l].neightype[k] = -1 
-M Matrix
-1.800000e-03 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
-Neighbour Number = 8
+k=12 dP[l].neightype[k] = 0 Left
+k=13 dP[l].neightype[k] = 2 Bottom
+k=14 dP[l].neightype[k] = -1 
+Neighbour Number = 5
 Neighbour Index 1149
 From voxel:  54
 Point = (4.400000e-01,5.400000e-01,0.000000e+00)
-(dx,dy,dz) = (4.000000e-02,0.000000e+00,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,0.000000e+00,0.000000e+00)
+(dx,dy,dz) = (-4.000000e-02,-0.000000e+00,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,0.000000e+00,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
 Distance = 4.000000e-02
 Alpha = 6.000000e+00
-Exp Term =4.897959e+01Weight = 5.350983e-22
+Exp Term =1.959184e+00Weight = 1.409735e-01
 Type: 
-k=24 dP[l].neightype[k] = 0 Left
-k=25 dP[l].neightype[k] = -1 
-k=26 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-5.350983e-22
-Neighbour Number = 9
+k=15 dP[l].neightype[k] = 0 Left
+k=16 dP[l].neightype[k] = -1 
+k=17 dP[l].neightype[k] = -1 
+Neighbour Number = 6
 Neighbour Index 1150
 From voxel:  54
 Point = (4.400000e-01,5.600000e-01,0.000000e+00)
-(dx,dy,dz) = (4.000000e-02,-2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,4.000000e-04,0.000000e+00)
+(dx,dy,dz) = (-4.000000e-02,2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (-8.000000e-04,0.000000e+00,-0.000000e+00)
 Distance = 4.472136e-02
 Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
+Exp Term =2.448980e+00Weight = 8.638169e-02
 Type: 
-k=27 dP[l].neightype[k] = 0 Left
-k=28 dP[l].neightype[k] = 3 Top
-k=29 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
-Neighbour Number = 10
+k=18 dP[l].neightype[k] = 0 Left
+k=19 dP[l].neightype[k] = 3 Top
+k=20 dP[l].neightype[k] = -1 
+Neighbour Number = 7
 Neighbour Index 1151
 From voxel:  54
 Point = (4.400000e-01,5.800000e-01,0.000000e+00)
-(dx,dy,dz) = (4.000000e-02,-4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,1.600000e-03,0.000000e+00)
+(dx,dy,dz) = (-4.000000e-02,4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,8.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (-1.600000e-03,0.000000e+00,-0.000000e+00)
 Distance = 5.656854e-02
 Alpha = 6.000000e+00
-Exp Term =6.926760e+01Weight = 8.269176e-31
+Exp Term =3.918367e+00Weight = 1.987351e-02
 Type: 
-k=30 dP[l].neightype[k] = 0 Left
-k=31 dP[l].neightype[k] = 3 Top
-k=32 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-8.269176e-31
-Neighbour Number = 11
+k=21 dP[l].neightype[k] = 0 Left
+k=22 dP[l].neightype[k] = 3 Top
+k=23 dP[l].neightype[k] = -1 
+Neighbour Number = 8
+Neighbour Index 1197
+From voxel:  44
+Point = (4.600000e-01,4.800000e-01,0.000000e+00)
+(dx,dy,dz) = (-2.000000e-02,-6.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,1.800000e-03,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (1.200000e-03,0.000000e+00,0.000000e+00)
+Distance = 6.324555e-02
+Alpha = 6.000000e+00
+Exp Term =4.897959e+00Weight = 7.461796e-03
+Type: 
+k=24 dP[l].neightype[k] = 0 Left
+k=25 dP[l].neightype[k] = 2 Bottom
+k=26 dP[l].neightype[k] = -1 
+Neighbour Number = 9
 Neighbour Index 1198
 From voxel:  54
 Point = (4.600000e-01,5.000000e-01,0.000000e+00)
-(dx,dy,dz) = (2.000000e-02,4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,1.600000e-03,0.000000e+00)
+(dx,dy,dz) = (-2.000000e-02,-4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,8.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (8.000000e-04,0.000000e+00,0.000000e+00)
 Distance = 4.472136e-02
 Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
+Exp Term =2.448980e+00Weight = 8.638169e-02
 Type: 
-k=33 dP[l].neightype[k] = 0 Left
-k=34 dP[l].neightype[k] = 2 Bottom
-k=35 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
-Neighbour Number = 12
+k=27 dP[l].neightype[k] = 0 Left
+k=28 dP[l].neightype[k] = 2 Bottom
+k=29 dP[l].neightype[k] = -1 
+Neighbour Number = 10
 Neighbour Index 1199
 From voxel:  54
 Point = (4.600000e-01,5.200000e-01,0.000000e+00)
-(dx,dy,dz) = (2.000000e-02,2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,4.000000e-04,0.000000e+00)
+(dx,dy,dz) = (-2.000000e-02,-2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (4.000000e-04,0.000000e+00,0.000000e+00)
 Distance = 2.828427e-02
 Alpha = 6.000000e+00
-Exp Term =3.463380e+01Weight = 9.093501e-16
+Exp Term =9.795918e-01Weight = 3.754643e-01
 Type: 
-k=36 dP[l].neightype[k] = 0 Left
-k=37 dP[l].neightype[k] = 2 Bottom
-k=38 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 1.000000e+00 2.000000e-02 2.000000e-04 -6.000000e-02 
-W Matrix
-9.093501e-16
-Neighbour Number = 13
+k=30 dP[l].neightype[k] = 0 Left
+k=31 dP[l].neightype[k] = 2 Bottom
+k=32 dP[l].neightype[k] = -1 
+Neighbour Number = 11
 Neighbour Index 1200
 From voxel:  54
 Point = (4.600000e-01,5.400000e-01,0.000000e+00)
-(dx,dy,dz) = (2.000000e-02,0.000000e+00,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,0.000000e+00,0.000000e+00)
+(dx,dy,dz) = (-2.000000e-02,-0.000000e+00,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,0.000000e+00,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
 Distance = 2.000000e-02
 Alpha = 6.000000e+00
-Exp Term =2.448980e+01Weight = 2.313219e-11
+Exp Term =4.897959e-01Weight = 6.127514e-01
 Type: 
-k=39 dP[l].neightype[k] = 0 Left
-k=40 dP[l].neightype[k] = -1 
-k=41 dP[l].neightype[k] = -1 
-M Matrix
--1.200000e-03 1.800000e-03 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.313219e-11
-Neighbour Number = 14
+k=33 dP[l].neightype[k] = 0 Left
+k=34 dP[l].neightype[k] = -1 
+k=35 dP[l].neightype[k] = -1 
+Neighbour Number = 12
 Neighbour Index 1201
 From voxel:  54
 Point = (4.600000e-01,5.600000e-01,0.000000e+00)
-(dx,dy,dz) = (2.000000e-02,-2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,4.000000e-04,0.000000e+00)
+(dx,dy,dz) = (-2.000000e-02,2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (-4.000000e-04,0.000000e+00,-0.000000e+00)
 Distance = 2.828427e-02
 Alpha = 6.000000e+00
-Exp Term =3.463380e+01Weight = 9.093501e-16
+Exp Term =9.795918e-01Weight = 3.754643e-01
+Type: 
+k=36 dP[l].neightype[k] = 0 Left
+k=37 dP[l].neightype[k] = 3 Top
+k=38 dP[l].neightype[k] = -1 
+Neighbour Number = 13
+Neighbour Index 1202
+From voxel:  54
+Point = (4.600000e-01,5.800000e-01,0.000000e+00)
+(dx,dy,dz) = (-2.000000e-02,4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,8.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-8.000000e-04,0.000000e+00,-0.000000e+00)
+Distance = 4.472136e-02
+Alpha = 6.000000e+00
+Exp Term =2.448980e+00Weight = 8.638169e-02
+Type: 
+k=39 dP[l].neightype[k] = 0 Left
+k=40 dP[l].neightype[k] = 3 Top
+k=41 dP[l].neightype[k] = -1 
+Neighbour Number = 14
+Neighbour Index 1203
+From voxel:  64
+Point = (4.600000e-01,6.000000e-01,0.000000e+00)
+(dx,dy,dz) = (-2.000000e-02,6.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,1.800000e-03,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,0.000000e+00,-0.000000e+00)
+Distance = 6.324555e-02
+Alpha = 6.000000e+00
+Exp Term =4.897959e+00Weight = 7.461796e-03
 Type: 
 k=42 dP[l].neightype[k] = 0 Left
 k=43 dP[l].neightype[k] = 3 Top
 k=44 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-9.093501e-16
 Neighbour Number = 15
-Neighbour Index 1202
-From voxel:  54
-Point = (4.600000e-01,5.800000e-01,0.000000e+00)
-(dx,dy,dz) = (2.000000e-02,-4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,1.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-8.000000e-04,0.000000e+00,-0.000000e+00)
-Distance = 4.472136e-02
+Neighbour Index 1248
+From voxel:  44
+Point = (4.800000e-01,4.800000e-01,0.000000e+00)
+(dx,dy,dz) = (-0.000000e+00,-6.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (0.000000e+00,1.800000e-03,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
+Distance = 6.000000e-02
 Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
+Exp Term =4.408163e+00Weight = 1.217752e-02
 Type: 
-k=45 dP[l].neightype[k] = 0 Left
-k=46 dP[l].neightype[k] = 3 Top
+k=45 dP[l].neightype[k] = -1 
+k=46 dP[l].neightype[k] = 2 Bottom
 k=47 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
 Neighbour Number = 16
 Neighbour Index 1249
 From voxel:  54
 Point = (4.800000e-01,5.000000e-01,0.000000e+00)
-(dx,dy,dz) = (0.000000e+00,4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (0.000000e+00,1.600000e-03,0.000000e+00)
+(dx,dy,dz) = (-0.000000e+00,-4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (0.000000e+00,8.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
 Distance = 4.000000e-02
 Alpha = 6.000000e+00
-Exp Term =4.897959e+01Weight = 5.350983e-22
+Exp Term =1.959184e+00Weight = 1.409735e-01
 Type: 
 k=48 dP[l].neightype[k] = -1 
 k=49 dP[l].neightype[k] = 2 Bottom
 k=50 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-5.350983e-22
 Neighbour Number = 17
 Neighbour Index 1250
 From voxel:  54
 Point = (4.800000e-01,5.200000e-01,0.000000e+00)
-(dx,dy,dz) = (0.000000e+00,2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (0.000000e+00,4.000000e-04,0.000000e+00)
+(dx,dy,dz) = (-0.000000e+00,-2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (0.000000e+00,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
 Distance = 2.000000e-02
 Alpha = 6.000000e+00
-Exp Term =2.448980e+01Weight = 2.313219e-11
+Exp Term =4.897959e-01Weight = 6.127514e-01
 Type: 
 k=51 dP[l].neightype[k] = -1 
 k=52 dP[l].neightype[k] = 2 Bottom
 k=53 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.313219e-11
 Neighbour Number = 18
 Neighbour Index 1251
 From voxel:  54
 Point = (4.800000e-01,5.400000e-01,0.000000e+00)
-(dx,dy,dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
+(dx,dy,dz) = (-0.000000e+00,-0.000000e+00,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (0.000000e+00,0.000000e+00,0.000000e+00)
 Distance = 0.000000e+00
 Alpha = 6.000000e+00
@@ -340,463 +268,362 @@ Type:
 k=54 dP[l].neightype[k] = -1 
 k=55 dP[l].neightype[k] = -1 
 k=56 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 1.000000e+00 -6.000000e-02 1.800000e-03 
-W Matrix
-1.000000e+00
 Neighbour Number = 19
 Neighbour Index 1252
 From voxel:  54
 Point = (4.800000e-01,5.600000e-01,0.000000e+00)
-(dx,dy,dz) = (0.000000e+00,-2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (0.000000e+00,4.000000e-04,0.000000e+00)
+(dx,dy,dz) = (-0.000000e+00,2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (0.000000e+00,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (-0.000000e+00,0.000000e+00,-0.000000e+00)
 Distance = 2.000000e-02
 Alpha = 6.000000e+00
-Exp Term =2.448980e+01Weight = 2.313219e-11
+Exp Term =4.897959e-01Weight = 6.127514e-01
 Type: 
 k=57 dP[l].neightype[k] = -1 
 k=58 dP[l].neightype[k] = 3 Top
 k=59 dP[l].neightype[k] = -1 
-M Matrix
--2.000000e-02 1.200000e-03 2.000000e-04 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.313219e-11
 Neighbour Number = 20
 Neighbour Index 1253
 From voxel:  54
 Point = (4.800000e-01,5.800000e-01,0.000000e+00)
-(dx,dy,dz) = (0.000000e+00,-4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (0.000000e+00,1.600000e-03,0.000000e+00)
+(dx,dy,dz) = (-0.000000e+00,4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (0.000000e+00,8.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (-0.000000e+00,0.000000e+00,-0.000000e+00)
 Distance = 4.000000e-02
 Alpha = 6.000000e+00
-Exp Term =4.897959e+01Weight = 5.350983e-22
+Exp Term =1.959184e+00Weight = 1.409735e-01
 Type: 
 k=60 dP[l].neightype[k] = -1 
 k=61 dP[l].neightype[k] = 3 Top
 k=62 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-5.350983e-22
 Neighbour Number = 21
-Neighbour Index 1300
-From voxel:  55
-Point = (5.000000e-01,5.000000e-01,0.000000e+00)
-(dx,dy,dz) = (-2.000000e-02,4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,1.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-8.000000e-04,-0.000000e+00,0.000000e+00)
-Distance = 4.472136e-02
+Neighbour Index 1254
+From voxel:  64
+Point = (4.800000e-01,6.000000e-01,0.000000e+00)
+(dx,dy,dz) = (-0.000000e+00,6.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (0.000000e+00,1.800000e-03,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,0.000000e+00,-0.000000e+00)
+Distance = 6.000000e-02
 Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
+Exp Term =4.408163e+00Weight = 1.217752e-02
 Type: 
-k=63 dP[l].neightype[k] = 1 Right
-k=64 dP[l].neightype[k] = 2 Bottom
+k=63 dP[l].neightype[k] = -1 
+k=64 dP[l].neightype[k] = 3 Top
 k=65 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
 Neighbour Number = 22
-Neighbour Index 1301
-From voxel:  55
-Point = (5.000000e-01,5.200000e-01,0.000000e+00)
-(dx,dy,dz) = (-2.000000e-02,2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,4.000000e-04,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-4.000000e-04,-0.000000e+00,0.000000e+00)
-Distance = 2.828427e-02
+Neighbour Index 1299
+From voxel:  45
+Point = (5.000000e-01,4.800000e-01,0.000000e+00)
+(dx,dy,dz) = (2.000000e-02,-6.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,1.800000e-03,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,-0.000000e+00,0.000000e+00)
+Distance = 6.324555e-02
 Alpha = 6.000000e+00
-Exp Term =3.463380e+01Weight = 9.093501e-16
+Exp Term =4.897959e+00Weight = 7.461796e-03
 Type: 
 k=66 dP[l].neightype[k] = 1 Right
 k=67 dP[l].neightype[k] = 2 Bottom
 k=68 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-9.093501e-16
 Neighbour Number = 23
-Neighbour Index 1302
+Neighbour Index 1300
 From voxel:  55
-Point = (5.000000e-01,5.400000e-01,0.000000e+00)
-(dx,dy,dz) = (-2.000000e-02,0.000000e+00,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,0.000000e+00,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,-0.000000e+00,0.000000e+00)
-Distance = 2.000000e-02
-Alpha = 6.000000e+00
-Exp Term =2.448980e+01Weight = 2.313219e-11
-Type: 
-k=69 dP[l].neightype[k] = 1 Right
-k=70 dP[l].neightype[k] = -1 
-k=71 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.313219e-11
-Neighbour Number = 24
-Neighbour Index 1303
-From voxel:  55
-Point = (5.000000e-01,5.600000e-01,0.000000e+00)
-(dx,dy,dz) = (-2.000000e-02,-2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,4.000000e-04,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (4.000000e-04,-0.000000e+00,-0.000000e+00)
-Distance = 2.828427e-02
-Alpha = 6.000000e+00
-Exp Term =3.463380e+01Weight = 9.093501e-16
-Type: 
-k=72 dP[l].neightype[k] = 1 Right
-k=73 dP[l].neightype[k] = 3 Top
-k=74 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 1.000000e+00 -6.000000e-02 
-W Matrix
-9.093501e-16
-Neighbour Number = 25
-Neighbour Index 1304
-From voxel:  55
-Point = (5.000000e-01,5.800000e-01,0.000000e+00)
-(dx,dy,dz) = (-2.000000e-02,-4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,1.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (8.000000e-04,-0.000000e+00,-0.000000e+00)
-Distance = 4.472136e-02
-Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
-Type: 
-k=75 dP[l].neightype[k] = 1 Right
-k=76 dP[l].neightype[k] = 3 Top
-k=77 dP[l].neightype[k] = -1 
-M Matrix
-1.800000e-03 0.000000e+00 -0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
-Neighbour Number = 26
-Neighbour Index 1351
-From voxel:  55
-Point = (5.200000e-01,5.000000e-01,0.000000e+00)
-(dx,dy,dz) = (-4.000000e-02,4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,1.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-1.600000e-03,-0.000000e+00,0.000000e+00)
-Distance = 5.656854e-02
-Alpha = 6.000000e+00
-Exp Term =6.926760e+01Weight = 8.269176e-31
-Type: 
-k=78 dP[l].neightype[k] = 1 Right
-k=79 dP[l].neightype[k] = 2 Bottom
-k=80 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-8.269176e-31
-Neighbour Number = 27
-Neighbour Index 1352
-From voxel:  55
-Point = (5.200000e-01,5.200000e-01,0.000000e+00)
-(dx,dy,dz) = (-4.000000e-02,2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,4.000000e-04,0.000000e+00)
+Point = (5.000000e-01,5.000000e-01,0.000000e+00)
+(dx,dy,dz) = (2.000000e-02,-4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,8.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (-8.000000e-04,-0.000000e+00,0.000000e+00)
 Distance = 4.472136e-02
 Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
+Exp Term =2.448980e+00Weight = 8.638169e-02
 Type: 
-k=81 dP[l].neightype[k] = 1 Right
-k=82 dP[l].neightype[k] = 2 Bottom
-k=83 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
-Neighbour Number = 28
-Neighbour Index 1353
+k=69 dP[l].neightype[k] = 1 Right
+k=70 dP[l].neightype[k] = 2 Bottom
+k=71 dP[l].neightype[k] = -1 
+Neighbour Number = 24
+Neighbour Index 1301
 From voxel:  55
-Point = (5.200000e-01,5.400000e-01,0.000000e+00)
-(dx,dy,dz) = (-4.000000e-02,0.000000e+00,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,0.000000e+00,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,-0.000000e+00,0.000000e+00)
-Distance = 4.000000e-02
+Point = (5.000000e-01,5.200000e-01,0.000000e+00)
+(dx,dy,dz) = (2.000000e-02,-2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,2.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-4.000000e-04,-0.000000e+00,0.000000e+00)
+Distance = 2.828427e-02
 Alpha = 6.000000e+00
-Exp Term =4.897959e+01Weight = 5.350983e-22
+Exp Term =9.795918e-01Weight = 3.754643e-01
 Type: 
-k=84 dP[l].neightype[k] = 1 Right
-k=85 dP[l].neightype[k] = -1 
-k=86 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-5.350983e-22
-Neighbour Number = 29
-Neighbour Index 1354
+k=72 dP[l].neightype[k] = 1 Right
+k=73 dP[l].neightype[k] = 2 Bottom
+k=74 dP[l].neightype[k] = -1 
+Neighbour Number = 25
+Neighbour Index 1302
 From voxel:  55
-Point = (5.200000e-01,5.600000e-01,0.000000e+00)
-(dx,dy,dz) = (-4.000000e-02,-2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,4.000000e-04,0.000000e+00)
+Point = (5.000000e-01,5.400000e-01,0.000000e+00)
+(dx,dy,dz) = (2.000000e-02,-0.000000e+00,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,0.000000e+00,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,-0.000000e+00,0.000000e+00)
+Distance = 2.000000e-02
+Alpha = 6.000000e+00
+Exp Term =4.897959e-01Weight = 6.127514e-01
+Type: 
+k=75 dP[l].neightype[k] = 1 Right
+k=76 dP[l].neightype[k] = -1 
+k=77 dP[l].neightype[k] = -1 
+Neighbour Number = 26
+Neighbour Index 1303
+From voxel:  55
+Point = (5.000000e-01,5.600000e-01,0.000000e+00)
+(dx,dy,dz) = (2.000000e-02,2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,2.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (4.000000e-04,-0.000000e+00,-0.000000e+00)
+Distance = 2.828427e-02
+Alpha = 6.000000e+00
+Exp Term =9.795918e-01Weight = 3.754643e-01
+Type: 
+k=78 dP[l].neightype[k] = 1 Right
+k=79 dP[l].neightype[k] = 3 Top
+k=80 dP[l].neightype[k] = -1 
+Neighbour Number = 27
+Neighbour Index 1304
+From voxel:  55
+Point = (5.000000e-01,5.800000e-01,0.000000e+00)
+(dx,dy,dz) = (2.000000e-02,4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,8.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (8.000000e-04,-0.000000e+00,-0.000000e+00)
 Distance = 4.472136e-02
 Alpha = 6.000000e+00
-Exp Term =5.476085e+01Weight = 1.650691e-24
+Exp Term =2.448980e+00Weight = 8.638169e-02
 Type: 
-k=87 dP[l].neightype[k] = 1 Right
-k=88 dP[l].neightype[k] = 3 Top
-k=89 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.650691e-24
-Neighbour Number = 30
-Neighbour Index 1355
-From voxel:  55
-Point = (5.200000e-01,5.800000e-01,0.000000e+00)
-(dx,dy,dz) = (-4.000000e-02,-4.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (1.600000e-03,1.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (1.600000e-03,-0.000000e+00,-0.000000e+00)
-Distance = 5.656854e-02
-Alpha = 6.000000e+00
-Exp Term =6.926760e+01Weight = 8.269176e-31
-Type: 
-k=90 dP[l].neightype[k] = 1 Right
-k=91 dP[l].neightype[k] = 3 Top
-k=92 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 1.000000e+00 
-W Matrix
-8.269176e-31
-Neighbour Number = 31
-Neighbour Index 1403
-From voxel:  55
-Point = (5.400000e-01,5.200000e-01,0.000000e+00)
-(dx,dy,dz) = (-6.000000e-02,2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (3.600000e-03,4.000000e-04,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,-0.000000e+00,0.000000e+00)
-Distance = 6.324555e-02
-Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
-Type: 
-k=93 dP[l].neightype[k] = 1 Right
-k=94 dP[l].neightype[k] = 2 Bottom
-k=95 dP[l].neightype[k] = -1 
-M Matrix
--6.000000e-02 1.800000e-03 2.000000e-02 -1.200000e-03 2.000000e-04 0.000000e+00 
-W Matrix
-2.326485e-34
-Neighbour Number = 32
-Neighbour Index 1404
-From voxel:  55
-Point = (5.400000e-01,5.400000e-01,0.000000e+00)
-(dx,dy,dz) = (-6.000000e-02,0.000000e+00,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (3.600000e-03,0.000000e+00,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,-0.000000e+00,0.000000e+00)
-Distance = 6.000000e-02
-Alpha = 6.000000e+00
-Exp Term =7.346939e+01Weight = 1.237800e-32
-Type: 
-k=96 dP[l].neightype[k] = 1 Right
-k=97 dP[l].neightype[k] = -1 
-k=98 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.237800e-32
-Neighbour Number = 33
-Neighbour Index 1405
-From voxel:  55
-Point = (5.400000e-01,5.600000e-01,0.000000e+00)
-(dx,dy,dz) = (-6.000000e-02,-2.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (3.600000e-03,4.000000e-04,0.000000e+00)
+k=81 dP[l].neightype[k] = 1 Right
+k=82 dP[l].neightype[k] = 3 Top
+k=83 dP[l].neightype[k] = -1 
+Neighbour Number = 28
+Neighbour Index 1305
+From voxel:  65
+Point = (5.000000e-01,6.000000e-01,0.000000e+00)
+(dx,dy,dz) = (2.000000e-02,6.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (2.000000e-04,1.800000e-03,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (1.200000e-03,-0.000000e+00,-0.000000e+00)
 Distance = 6.324555e-02
 Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
+Exp Term =4.897959e+00Weight = 7.461796e-03
+Type: 
+k=84 dP[l].neightype[k] = 1 Right
+k=85 dP[l].neightype[k] = 3 Top
+k=86 dP[l].neightype[k] = -1 
+Neighbour Number = 29
+Neighbour Index 1351
+From voxel:  55
+Point = (5.200000e-01,5.000000e-01,0.000000e+00)
+(dx,dy,dz) = (4.000000e-02,-4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,8.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-1.600000e-03,-0.000000e+00,0.000000e+00)
+Distance = 5.656854e-02
+Alpha = 6.000000e+00
+Exp Term =3.918367e+00Weight = 1.987351e-02
+Type: 
+k=87 dP[l].neightype[k] = 1 Right
+k=88 dP[l].neightype[k] = 2 Bottom
+k=89 dP[l].neightype[k] = -1 
+Neighbour Number = 30
+Neighbour Index 1352
+From voxel:  55
+Point = (5.200000e-01,5.200000e-01,0.000000e+00)
+(dx,dy,dz) = (4.000000e-02,-2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,2.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-8.000000e-04,-0.000000e+00,0.000000e+00)
+Distance = 4.472136e-02
+Alpha = 6.000000e+00
+Exp Term =2.448980e+00Weight = 8.638169e-02
+Type: 
+k=90 dP[l].neightype[k] = 1 Right
+k=91 dP[l].neightype[k] = 2 Bottom
+k=92 dP[l].neightype[k] = -1 
+Neighbour Number = 31
+Neighbour Index 1353
+From voxel:  55
+Point = (5.200000e-01,5.400000e-01,0.000000e+00)
+(dx,dy,dz) = (4.000000e-02,-0.000000e+00,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,0.000000e+00,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,-0.000000e+00,0.000000e+00)
+Distance = 4.000000e-02
+Alpha = 6.000000e+00
+Exp Term =1.959184e+00Weight = 1.409735e-01
+Type: 
+k=93 dP[l].neightype[k] = 1 Right
+k=94 dP[l].neightype[k] = -1 
+k=95 dP[l].neightype[k] = -1 
+Neighbour Number = 32
+Neighbour Index 1354
+From voxel:  55
+Point = (5.200000e-01,5.600000e-01,0.000000e+00)
+(dx,dy,dz) = (4.000000e-02,2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,2.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (8.000000e-04,-0.000000e+00,-0.000000e+00)
+Distance = 4.472136e-02
+Alpha = 6.000000e+00
+Exp Term =2.448980e+00Weight = 8.638169e-02
+Type: 
+k=96 dP[l].neightype[k] = 1 Right
+k=97 dP[l].neightype[k] = 3 Top
+k=98 dP[l].neightype[k] = -1 
+Neighbour Number = 33
+Neighbour Index 1355
+From voxel:  55
+Point = (5.200000e-01,5.800000e-01,0.000000e+00)
+(dx,dy,dz) = (4.000000e-02,4.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (8.000000e-04,8.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (1.600000e-03,-0.000000e+00,-0.000000e+00)
+Distance = 5.656854e-02
+Alpha = 6.000000e+00
+Exp Term =3.918367e+00Weight = 1.987351e-02
 Type: 
 k=99 dP[l].neightype[k] = 1 Right
 k=100 dP[l].neightype[k] = 3 Top
 k=101 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.326485e-34
 Neighbour Number = 34
-Neighbour Index 1203
-From voxel:  64
-Point = (4.600000e-01,6.000000e-01,0.000000e+00)
-(dx,dy,dz) = (2.000000e-02,-6.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,3.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,0.000000e+00,-0.000000e+00)
+Neighbour Index 1403
+From voxel:  55
+Point = (5.400000e-01,5.200000e-01,0.000000e+00)
+(dx,dy,dz) = (6.000000e-02,-2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (1.800000e-03,2.000000e-04,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-1.200000e-03,-0.000000e+00,0.000000e+00)
 Distance = 6.324555e-02
 Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
+Exp Term =4.897959e+00Weight = 7.461796e-03
 Type: 
-k=102 dP[l].neightype[k] = 0 Left
-k=103 dP[l].neightype[k] = 3 Top
+k=102 dP[l].neightype[k] = 1 Right
+k=103 dP[l].neightype[k] = 2 Bottom
 k=104 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.326485e-34
 Neighbour Number = 35
-Neighbour Index 1254
-From voxel:  64
-Point = (4.800000e-01,6.000000e-01,0.000000e+00)
-(dx,dy,dz) = (0.000000e+00,-6.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (0.000000e+00,3.600000e-03,0.000000e+00)
-(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,0.000000e+00,-0.000000e+00)
+Neighbour Index 1404
+From voxel:  55
+Point = (5.400000e-01,5.400000e-01,0.000000e+00)
+(dx,dy,dz) = (6.000000e-02,-0.000000e+00,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (1.800000e-03,0.000000e+00,0.000000e+00)
+(dx*dy,dx*dz,dy*dz) = (-0.000000e+00,-0.000000e+00,0.000000e+00)
 Distance = 6.000000e-02
 Alpha = 6.000000e+00
-Exp Term =7.346939e+01Weight = 1.237800e-32
+Exp Term =4.408163e+00Weight = 1.217752e-02
 Type: 
-k=105 dP[l].neightype[k] = -1 
-k=106 dP[l].neightype[k] = 3 Top
+k=105 dP[l].neightype[k] = 1 Right
+k=106 dP[l].neightype[k] = -1 
 k=107 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-1.237800e-32
 Neighbour Number = 36
-Neighbour Index 1305
-From voxel:  65
-Point = (5.000000e-01,6.000000e-01,0.000000e+00)
-(dx,dy,dz) = (-2.000000e-02,-6.000000e-02,0.000000e+00)
-(dx*dx,dy*dy,dz*dz) = (4.000000e-04,3.600000e-03,0.000000e+00)
+Neighbour Index 1405
+From voxel:  55
+Point = (5.400000e-01,5.600000e-01,0.000000e+00)
+(dx,dy,dz) = (6.000000e-02,2.000000e-02,-0.000000e+00)
+0.5*(dx*dx,dy*dy,dz*dz) = (1.800000e-03,2.000000e-04,0.000000e+00)
 (dx*dy,dx*dz,dy*dz) = (1.200000e-03,-0.000000e+00,-0.000000e+00)
 Distance = 6.324555e-02
 Alpha = 6.000000e+00
-Exp Term =7.744353e+01Weight = 2.326485e-34
+Exp Term =4.897959e+00Weight = 7.461796e-03
 Type: 
 k=108 dP[l].neightype[k] = 1 Right
 k=109 dP[l].neightype[k] = 3 Top
 k=110 dP[l].neightype[k] = -1 
-M Matrix
-0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 
-W Matrix
-2.326485e-34
 
-M Matrix
-1.000000e+00 -2.000000e-02 2.000000e-04 -6.000000e-02 1.200000e-03 1.800000e-03 
-1.000000e+00 0.000000e+00 0.000000e+00 -6.000000e-02 -0.000000e+00 1.800000e-03 
-1.000000e+00 2.000000e-02 2.000000e-04 -6.000000e-02 -1.200000e-03 1.800000e-03 
-1.000000e+00 -6.000000e-02 1.800000e-03 -2.000000e-02 1.200000e-03 2.000000e-04 
-1.000000e+00 -6.000000e-02 1.800000e-03 0.000000e+00 -0.000000e+00 0.000000e+00 
-1.000000e+00 -6.000000e-02 1.800000e-03 2.000000e-02 -1.200000e-03 2.000000e-04 
-1.000000e+00 -4.000000e-02 8.000000e-04 -4.000000e-02 1.600000e-03 8.000000e-04 
-1.000000e+00 -4.000000e-02 8.000000e-04 -2.000000e-02 8.000000e-04 2.000000e-04 
-1.000000e+00 -4.000000e-02 8.000000e-04 0.000000e+00 -0.000000e+00 0.000000e+00 
-2.326485e-34 2.326485e-34 1.237800e-32 2.326485e-34 -8.000000e-04 2.000000e-04 
-5.350983e-22 1.650691e-24 9.093501e-16 2.313219e-11 9.093501e-16 1.650691e-24 
-0.000000e+00 3.301381e-26 1.818700e-17 4.626438e-13 1.818700e-17 3.301381e-26 
-0.000000e+00 3.301381e-28 1.818700e-19 4.626438e-15 1.818700e-19 3.301381e-28 
-2.140393e-23 -6.602763e-26 -1.818700e-17 0.000000e+00 1.818700e-17 6.602763e-26 
-0.000000e+00 -1.320553e-27 -3.637400e-19 0.000000e+00 3.637400e-19 1.320553e-27 
-4.280786e-25 1.320553e-27 1.818700e-19 0.000000e+00 1.818700e-19 1.320553e-27 
-1.000000e+00 0.000000e+00 0.000000e+00 -4.000000e-02 -0.000000e+00 8.000000e-04 
-1.000000e+00 0.000000e+00 0.000000e+00 -2.000000e-02 -0.000000e+00 2.000000e-04 
-1.000000e+00 9.252876e-17 2.909920e-22 -1.478138e-39 9.253604e-19 0.000000e+00 
-1.000000e+00 0.000000e+00 0.000000e+00 2.000000e-02 0.000000e+00 2.000000e-04 
-1.000000e+00 0.000000e+00 0.000000e+00 4.000000e-02 0.000000e+00 8.000000e-04 
-1.000000e+00 2.000000e-02 2.000000e-04 -4.000000e-02 -8.000000e-04 8.000000e-04 
-1.000000e+00 2.000000e-02 2.000000e-04 -2.000000e-02 -4.000000e-04 2.000000e-04 
-1.000000e+00 2.000000e-02 2.000000e-04 0.000000e+00 0.000000e+00 0.000000e+00 
-1.000000e+00 2.000000e-02 2.000000e-04 2.000000e-02 4.000000e-04 2.000000e-04 
-1.000000e+00 2.000000e-02 2.000000e-04 4.000000e-02 8.000000e-04 8.000000e-04 
-1.000000e+00 4.000000e-02 8.000000e-04 -4.000000e-02 -1.600000e-03 8.000000e-04 
-1.000000e+00 4.000000e-02 8.000000e-04 -2.000000e-02 -8.000000e-04 2.000000e-04 
-1.000000e+00 4.000000e-02 8.000000e-04 0.000000e+00 0.000000e+00 0.000000e+00 
-1.000000e+00 4.000000e-02 8.000000e-04 2.000000e-02 8.000000e-04 2.000000e-04 
-1.000000e+00 4.000000e-02 8.000000e-04 4.000000e-02 1.600000e-03 8.000000e-04 
-1.000000e+00 6.000000e-02 1.800000e-03 -2.000000e-02 -1.200000e-03 2.000000e-04 
-1.000000e+00 6.000000e-02 1.800000e-03 0.000000e+00 0.000000e+00 0.000000e+00 
-1.000000e+00 6.000000e-02 1.800000e-03 2.000000e-02 1.200000e-03 2.000000e-04 
-1.000000e+00 -2.000000e-02 2.000000e-04 6.000000e-02 -1.200000e-03 1.800000e-03 
-1.000000e+00 0.000000e+00 0.000000e+00 6.000000e-02 0.000000e+00 1.800000e-03 
-1.000000e+00 2.000000e-02 2.000000e-04 6.000000e-02 1.200000e-03 1.800000e-03 
-W Matrix
--0.000000e+00 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0.000000e+00 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 2.326485e-34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 2.326485e-34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 1.237800e-32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 2.326485e-34 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 8.269176e-31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 5.350983e-22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 8.269176e-31 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 9.093501e-16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 2.313219e-11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.093501e-16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5.350983e-22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.313219e-11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.000000e+00 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.313219e-11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5.350983e-22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.093501e-16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.313219e-11 0 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9.093501e-16 0 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8.269176e-31 0 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5.350983e-22 0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.650691e-24 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8.269176e-31 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.326485e-34 0 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.237800e-32 0 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.326485e-34 0 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.326485e-34 0 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.237800e-32 0 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2.326485e-34 
+Listing out the List of Neighbours of 4 typeTotal Neighbours = 0
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 MTW Matrix
-2.326485e-34 1.237800e-32 2.326485e-34 2.326485e-34 1.237800e-32 2.326485e-34 8.269176e-31 1.650691e-24 5.350983e-22 1.650691e-24 8.269176e-31 1.650691e-24 9.093501e-16 2.313219e-11 9.093501e-16 1.650691e-24 5.350983e-22 2.313219e-11 1.000000e+00 2.313219e-11 5.350983e-22 1.650691e-24 9.093501e-16 2.313219e-11 9.093501e-16 1.650691e-24 8.269176e-31 1.650691e-24 5.350983e-22 1.650691e-24 8.269176e-31 2.326485e-34 1.237800e-32 2.326485e-34 2.326485e-34 1.237800e-32 2.326485e-34 
--4.652970e-36 0.000000e+00 4.652970e-36 -1.395891e-35 -7.426797e-34 -1.395891e-35 -3.307670e-32 -6.602763e-26 -2.140393e-23 -6.602763e-26 -3.307670e-32 -3.301381e-26 -1.818700e-17 -4.626438e-13 -1.818700e-17 -3.301381e-26 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 3.301381e-26 1.818700e-17 4.626438e-13 1.818700e-17 3.301381e-26 3.307670e-32 6.602763e-26 2.140393e-23 6.602763e-26 3.307670e-32 1.395891e-35 7.426797e-34 1.395891e-35 -4.652970e-36 0.000000e+00 4.652970e-36 
-4.652970e-38 0.000000e+00 4.652970e-38 4.187673e-37 2.228039e-35 4.187673e-37 6.615341e-34 1.320553e-27 4.280786e-25 1.320553e-27 6.615341e-34 3.301381e-28 1.818700e-19 4.626438e-15 1.818700e-19 3.301381e-28 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 3.301381e-28 1.818700e-19 4.626438e-15 1.818700e-19 3.301381e-28 6.615341e-34 1.320553e-27 4.280786e-25 1.320553e-27 6.615341e-34 4.187673e-37 2.228039e-35 4.187673e-37 4.652970e-38 0.000000e+00 4.652970e-38 
--1.395891e-35 -7.426797e-34 -1.395891e-35 -4.652970e-36 0.000000e+00 4.652970e-36 -3.307670e-32 -3.301381e-26 0.000000e+00 3.301381e-26 3.307670e-32 -6.602763e-26 -1.818700e-17 0.000000e+00 1.818700e-17 6.602763e-26 -2.140393e-23 -4.626438e-13 0.000000e+00 4.626438e-13 2.140393e-23 -6.602763e-26 -1.818700e-17 0.000000e+00 1.818700e-17 6.602763e-26 -3.307670e-32 -3.301381e-26 0.000000e+00 3.301381e-26 3.307670e-32 -4.652970e-36 0.000000e+00 4.652970e-36 1.395891e-35 7.426797e-34 1.395891e-35 
-2.791782e-37 -0.000000e+00 -2.791782e-37 2.791782e-37 -0.000000e+00 -2.791782e-37 1.323068e-33 1.320553e-27 -0.000000e+00 -1.320553e-27 -1.323068e-33 1.320553e-27 3.637400e-19 -0.000000e+00 -3.637400e-19 -1.320553e-27 -0.000000e+00 -0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -1.320553e-27 -3.637400e-19 0.000000e+00 3.637400e-19 1.320553e-27 -1.323068e-33 -1.320553e-27 0.000000e+00 1.320553e-27 1.323068e-33 -2.791782e-37 0.000000e+00 2.791782e-37 -2.791782e-37 0.000000e+00 2.791782e-37 
-4.187673e-37 2.228039e-35 4.187673e-37 4.652970e-38 0.000000e+00 4.652970e-38 6.615341e-34 3.301381e-28 0.000000e+00 3.301381e-28 6.615341e-34 1.320553e-27 1.818700e-19 0.000000e+00 1.818700e-19 1.320553e-27 4.280786e-25 4.626438e-15 0.000000e+00 4.626438e-15 4.280786e-25 1.320553e-27 1.818700e-19 0.000000e+00 1.818700e-19 1.320553e-27 6.615341e-34 3.301381e-28 0.000000e+00 3.301381e-28 6.615341e-34 4.652970e-38 0.000000e+00 4.652970e-38 4.187673e-37 2.228039e-35 4.187673e-37 
+7.461796e-03 1.217752e-02 7.461796e-03 1.987351e-02 8.638169e-02 1.409735e-01 8.638169e-02 1.987351e-02 7.461796e-03 8.638169e-02 3.754643e-01 6.127514e-01 3.754643e-01 8.638169e-02 7.461796e-03 1.217752e-02 1.409735e-01 6.127514e-01 1.000000e+00 6.127514e-01 1.409735e-01 1.217752e-02 7.461796e-03 8.638169e-02 3.754643e-01 6.127514e-01 3.754643e-01 8.638169e-02 7.461796e-03 1.987351e-02 8.638169e-02 1.409735e-01 8.638169e-02 1.987351e-02 7.461796e-03 1.217752e-02 7.461796e-03 
+-4.477077e-04 -7.306515e-04 -4.477077e-04 -7.949406e-04 -3.455267e-03 -5.638938e-03 -3.455267e-03 -7.949406e-04 -1.492359e-04 -1.727634e-03 -7.509286e-03 -1.225503e-02 -7.509286e-03 -1.727634e-03 -1.492359e-04 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 1.492359e-04 1.727634e-03 7.509286e-03 1.225503e-02 7.509286e-03 1.727634e-03 1.492359e-04 7.949406e-04 3.455267e-03 5.638938e-03 3.455267e-03 7.949406e-04 4.477077e-04 7.306515e-04 4.477077e-04 
+1.343123e-05 2.191954e-05 1.343123e-05 1.589881e-05 6.910535e-05 1.127788e-04 6.910535e-05 1.589881e-05 1.492359e-06 1.727634e-05 7.509286e-05 1.225503e-04 7.509286e-05 1.727634e-05 1.492359e-06 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 1.492359e-06 1.727634e-05 7.509286e-05 1.225503e-04 7.509286e-05 1.727634e-05 1.492359e-06 1.589881e-05 6.910535e-05 1.127788e-04 6.910535e-05 1.589881e-05 1.343123e-05 2.191954e-05 1.343123e-05 
+-1.492359e-04 0.000000e+00 1.492359e-04 -7.949406e-04 -1.727634e-03 0.000000e+00 1.727634e-03 7.949406e-04 -4.477077e-04 -3.455267e-03 -7.509286e-03 0.000000e+00 7.509286e-03 3.455267e-03 4.477077e-04 -7.306515e-04 -5.638938e-03 -1.225503e-02 0.000000e+00 1.225503e-02 5.638938e-03 7.306515e-04 -4.477077e-04 -3.455267e-03 -7.509286e-03 0.000000e+00 7.509286e-03 3.455267e-03 4.477077e-04 -7.949406e-04 -1.727634e-03 0.000000e+00 1.727634e-03 7.949406e-04 -1.492359e-04 0.000000e+00 1.492359e-04 
+8.954155e-06 -0.000000e+00 -8.954155e-06 3.179762e-05 6.910535e-05 -0.000000e+00 -6.910535e-05 -3.179762e-05 8.954155e-06 6.910535e-05 1.501857e-04 -0.000000e+00 -1.501857e-04 -6.910535e-05 -8.954155e-06 -0.000000e+00 -0.000000e+00 -0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 -8.954155e-06 -6.910535e-05 -1.501857e-04 0.000000e+00 1.501857e-04 6.910535e-05 8.954155e-06 -3.179762e-05 -6.910535e-05 0.000000e+00 6.910535e-05 3.179762e-05 -8.954155e-06 0.000000e+00 8.954155e-06 
+1.492359e-06 0.000000e+00 1.492359e-06 1.589881e-05 1.727634e-05 0.000000e+00 1.727634e-05 1.589881e-05 1.343123e-05 6.910535e-05 7.509286e-05 0.000000e+00 7.509286e-05 6.910535e-05 1.343123e-05 2.191954e-05 1.127788e-04 1.225503e-04 0.000000e+00 1.225503e-04 1.127788e-04 2.191954e-05 1.343123e-05 6.910535e-05 7.509286e-05 0.000000e+00 7.509286e-05 6.910535e-05 1.343123e-05 1.589881e-05 1.727634e-05 0.000000e+00 1.727634e-05 1.589881e-05 1.492359e-06 0.000000e+00 1.492359e-06 
+MTWM Matrix
+6.395709e+00 -7.269576e-17 1.283685e-03 1.401873e-16 -1.355253e-20 1.283685e-03 
+-7.269576e-17 2.567370e-03 -1.164670e-21 0.000000e+00 4.976319e-20 -1.442603e-20 
+1.283685e-03 -1.164670e-21 7.521839e-07 2.445808e-20 -3.308722e-24 2.430090e-07 
+1.401873e-16 -6.776264e-21 2.488159e-20 2.567370e-03 -2.911676e-20 6.342159e-20 
+-1.355253e-20 4.891615e-20 0.000000e+00 -2.890500e-20 9.720361e-07 -2.316106e-23 
+1.283685e-03 -1.442603e-20 2.430090e-07 6.151577e-20 -2.646978e-23 7.521839e-07 
 MTWM Inv Matrix
-1.000000e+00 -2.990945e-26 9.253604e-15 2.623740e-29 2.650526e-35 9.253604e-15 
--2.990945e-26 1.850721e-14 -5.463238e-30 2.650526e-35 4.209016e-37 -3.389614e-34 
-9.253604e-15 -5.463238e-30 1.850721e-18 2.104508e-37 -6.247005e-39 1.454960e-22 
-2.623740e-29 2.650526e-35 2.104508e-37 1.850721e-14 1.000000e+00 9.252876e-17 
-2.650526e-35 4.209016e-37 -6.247005e-39 1.000000e+00 2.909920e-22 -1.478138e-39 
-9.253604e-15 -3.389614e-34 1.454960e-22 9.252876e-17 -1.478138e-39 9.253604e-19 
+3.242442e-01 6.641253e-15 -4.182379e+02 -3.699276e-15 -8.292048e-15 -4.182379e+02 
+6.641253e-15 3.895037e+02 -1.058775e-11 -4.756548e-28 -1.994056e-11 -4.432004e-13 
+-4.182379e+02 -1.058775e-11 2.023875e+06 2.121220e-12 2.689358e-12 5.991332e+04 
+-3.319815e-15 1.028048e-15 1.742883e-12 3.895037e+02 1.166735e-11 -2.773907e-11 
+-5.444760e-15 -1.960115e-11 -4.403668e-12 1.158249e-11 1.028768e+06 4.239236e-11 
+-4.182379e+02 -4.432004e-13 5.991332e+04 -2.622681e-11 4.948539e-11 2.023875e+06 
+Identity Matrix
+1.000000e+00 -6.694093e-25 5.826450e-13 5.450587e-25 -6.565847e-26 0.000000e+00 
+7.703720e-34 1.000000e+00 -4.437343e-30 -7.456222e-42 -9.537719e-29 0.000000e+00 
+6.776264e-20 -1.220251e-28 1.000000e+00 1.200070e-28 -1.514551e-29 0.000000e+00 
+3.081488e-33 -1.898785e-32 7.888609e-31 1.000000e+00 5.993643e-29 0.000000e+00 
+-1.504633e-36 1.386772e-31 -7.703720e-34 -7.951125e-32 1.000000e+00 0.000000e+00 
+5.421011e-20 -3.976756e-29 0.000000e+00 4.652430e-29 -6.076694e-30 1.000000e+00 
+inv(MTWM)MTW Matrix Left
+2.725415e-01 4.474238e-01 2.725415e-01 -1.808861e-01 -7.300417e-01 -1.160847e+00 -7.300417e-01 -1.808861e-01 1.468348e-03 1.106530e-01 7.252077e-01 1.316395e+00 7.252077e-01 1.106530e-01 1.468348e-03 
+2.052437e+01 3.343100e+01 2.052437e+01 -1.085497e+01 -4.855289e+01 -7.998330e+01 -4.855289e+01 -1.085497e+01 9.134084e-01 8.289160e+00 3.007045e+01 4.583280e+01 3.007045e+01 8.289160e+00 9.134084e-01 
+6.847754e+02 1.114958e+03 6.847754e+02 -2.661884e+02 -1.211996e+03 -2.007871e+03 -1.211996e+03 -2.661884e+02 2.457681e+01 1.928666e+02 5.992974e+02 8.480224e+02 5.992974e+02 1.928666e+02 2.457681e+01 
+2.289035e+00 -5.279100e-15 -2.289035e+00 4.893489e+00 1.063495e+01 3.262039e-14 -1.063495e+01 -4.893489e+00 -1.355113e+00 -1.045833e+01 -2.272896e+01 -1.814867e-14 2.272896e+01 1.045833e+01 1.355113e+00 
+1.045019e+02 -2.216095e-13 -1.045019e+02 2.494428e+02 5.421107e+02 1.420480e-12 -5.421107e+02 -2.494428e+02 -3.253506e+01 -2.510954e+02 -5.457022e+02 -4.971949e-13 5.457022e+02 2.510954e+02 3.253506e+01 
+4.635072e+00 -9.225814e+00 4.635072e+00 8.388273e+01 7.297423e+00 -1.824626e+02 7.297423e+00 8.388273e+01 8.214057e+01 3.553942e+02 -8.305355e+00 -8.584059e+02 -8.305355e+00 3.553942e+02 8.214057e+01 
+inv(MTWM)MTW Matrix Right
+1.468348e-03 1.106530e-01 7.252077e-01 1.316395e+00 7.252077e-01 1.106530e-01 1.468348e-03 -1.808861e-01 -7.300417e-01 -1.160847e+00 -7.300417e-01 -1.808861e-01 2.725415e-01 4.474238e-01 2.725415e-01 
+-9.134084e-01 -8.289160e+00 -3.007045e+01 -4.583280e+01 -3.007045e+01 -8.289160e+00 -9.134084e-01 1.085497e+01 4.855289e+01 7.998330e+01 4.855289e+01 1.085497e+01 -2.052437e+01 -3.343100e+01 -2.052437e+01 
+2.457681e+01 1.928666e+02 5.992974e+02 8.480224e+02 5.992974e+02 1.928666e+02 2.457681e+01 -2.661884e+02 -1.211996e+03 -2.007871e+03 -1.211996e+03 -2.661884e+02 6.847754e+02 1.114958e+03 6.847754e+02 
+-1.355113e+00 -1.045833e+01 -2.272896e+01 3.529237e-14 2.272896e+01 1.045833e+01 1.355113e+00 4.893489e+00 1.063495e+01 -5.980670e-14 -1.063495e+01 -4.893489e+00 2.289035e+00 3.370379e-14 -2.289035e+00 
+3.253506e+01 2.510954e+02 5.457022e+02 -1.679941e-12 -5.457022e+02 -2.510954e+02 -3.253506e+01 -2.494428e+02 -5.421107e+02 2.295730e-12 5.421107e+02 2.494428e+02 -1.045019e+02 -1.349102e-12 1.045019e+02 
+8.214057e+01 3.553942e+02 -8.305355e+00 -8.584059e+02 -8.305355e+00 3.553942e+02 8.214057e+01 8.388273e+01 7.297423e+00 -1.824626e+02 7.297423e+00 8.388273e+01 4.635072e+00 -9.225814e+00 4.635072e+00 
+inv(MTWM)MTW Matrix Bottom
+1.538873e-03 -1.808149e-01 1.109584e-01 2.725480e-01 -7.300388e-01 7.252020e-01 4.474198e-01 -1.161009e+00 1.315661e+00 2.725480e-01 -7.300388e-01 7.252020e-01 -1.808149e-01 1.109584e-01 1.538873e-03 
+-1.355113e+00 4.893489e+00 -1.045833e+01 2.289035e+00 1.063495e+01 -2.272896e+01 2.698418e-14 -7.134079e-14 8.333640e-14 -2.289035e+00 -1.063495e+01 2.272896e+01 -4.893489e+00 1.045833e+01 1.355113e+00 
+8.213985e+01 8.389557e+01 3.553870e+02 4.607524e+00 7.353848e+00 -8.334253e+00 -9.270743e+00 -1.823702e+02 -8.584516e+02 4.607524e+00 7.353848e+00 -8.334253e+00 8.389557e+01 3.553870e+02 8.213985e+01 
+9.183006e-01 -1.084983e+01 8.310279e+00 2.052441e+01 -4.855186e+01 3.006962e+01 3.343006e+01 -7.999320e+01 4.578107e+01 2.052441e+01 -4.855186e+01 3.006962e+01 -1.084983e+01 8.310279e+00 9.183006e-01 
+-3.253506e+01 2.494428e+02 -2.510954e+02 1.045019e+02 5.421107e+02 -5.457022e+02 1.054306e-12 -3.015117e-12 2.648276e-12 -1.045019e+02 -5.421107e+02 5.457022e+02 -2.494428e+02 2.510954e+02 3.253506e+01 
+2.472247e+01 -2.660348e+02 1.934952e+02 6.847754e+02 -1.211963e+03 5.992717e+02 1.114928e+03 -2.008162e+03 8.464799e+02 6.847754e+02 -1.211963e+03 5.992717e+02 -2.660348e+02 1.934952e+02 2.472247e+01 
+inv(MTWM)MTW Matrix Top
+1.538873e-03 1.109584e-01 -1.808149e-01 7.252020e-01 -7.300388e-01 2.725480e-01 1.315661e+00 -1.161009e+00 4.474198e-01 7.252020e-01 -7.300388e-01 2.725480e-01 1.109584e-01 -1.808149e-01 1.538873e-03 
+-1.355113e+00 -1.045833e+01 4.893489e+00 -2.272896e+01 1.063495e+01 2.289035e+00 -1.621182e-14 6.092036e-14 -3.351993e-14 2.272896e+01 -1.063495e+01 -2.289035e+00 1.045833e+01 -4.893489e+00 1.355113e+00 
+8.213985e+01 3.553870e+02 8.389557e+01 -8.334253e+00 7.353848e+00 4.607524e+00 -8.584516e+02 -1.823702e+02 -9.270743e+00 -8.334253e+00 7.353848e+00 4.607524e+00 3.553870e+02 8.389557e+01 8.213985e+01 
+-9.183006e-01 -8.310279e+00 1.084983e+01 -3.006962e+01 4.855186e+01 -2.052441e+01 -4.578107e+01 7.999320e+01 -3.343006e+01 -3.006962e+01 4.855186e+01 -2.052441e+01 -8.310279e+00 1.084983e+01 -9.183006e-01 
+3.253506e+01 2.510954e+02 -2.494428e+02 5.457022e+02 -5.421107e+02 -1.045019e+02 1.404705e-12 -2.429526e-12 1.430225e-12 -5.457022e+02 5.421107e+02 1.045019e+02 -2.510954e+02 2.494428e+02 -3.253506e+01 
+2.472247e+01 1.934952e+02 -2.660348e+02 5.992717e+02 -1.211963e+03 6.847754e+02 8.464799e+02 -2.008162e+03 1.114928e+03 5.992717e+02 -1.211963e+03 6.847754e+02 1.934952e+02 -2.660348e+02 2.472247e+01 
+inv(MTWM)MTW Matrix Center
+-3.822168e-03 -5.219092e-03 -3.822168e-03 -6.855099e-03 -8.119335e-03 -1.458529e-03 -8.119335e-03 -6.855099e-03 -3.822168e-03 -8.119335e-03 5.892876e-02 1.474259e-01 5.892876e-02 -8.119335e-03 -3.822168e-03 -5.219092e-03 -1.458529e-03 1.474259e-01 3.242442e-01 1.474259e-01 -1.458529e-03 -5.219092e-03 -3.822168e-03 -8.119335e-03 5.892876e-02 1.474259e-01 5.892876e-02 -8.119335e-03 -3.822168e-03 -6.855099e-03 -8.119335e-03 -1.458529e-03 -8.119335e-03 -6.855099e-03 -3.822168e-03 -5.219092e-03 -3.822168e-03 
+-1.743838e-01 -2.845914e-01 -1.743838e-01 -3.096323e-01 -1.345839e+00 -2.196387e+00 -1.345839e+00 -3.096323e-01 -5.812793e-02 -6.729196e-01 -2.924894e+00 -4.773378e+00 -2.924894e+00 -6.729196e-01 -5.812793e-02 7.115928e-17 8.862568e-16 4.015123e-15 6.641253e-15 4.015123e-15 8.862568e-16 7.115928e-17 5.812793e-02 6.729196e-01 2.924894e+00 4.773378e+00 2.924894e+00 6.729196e-01 5.812793e-02 3.096323e-01 1.345839e+00 2.196387e+00 1.345839e+00 3.096323e-01 1.743838e-01 2.845914e-01 1.743838e-01 
+2.415174e+01 3.926932e+01 2.415174e+01 2.481790e+01 1.047676e+02 1.692897e+02 1.047676e+02 2.481790e+01 7.042523e-01 2.977383e+00 -5.557746e-01 -8.249409e+00 -5.557746e-01 2.977383e+00 7.042523e-01 -3.779830e+00 -5.220349e+01 -2.489335e+02 -4.182379e+02 -2.489335e+02 -5.220349e+01 -3.779830e+00 7.042523e-01 2.977383e+00 -5.557746e-01 -8.249409e+00 -5.557746e-01 2.977383e+00 7.042523e-01 2.481790e+01 1.047676e+02 1.692897e+02 1.047676e+02 2.481790e+01 2.415174e+01 3.926932e+01 2.415174e+01 
+-5.812793e-02 -2.975059e-18 5.812793e-02 -3.096323e-01 -6.729196e-01 -2.772426e-16 6.729196e-01 3.096323e-01 -1.743838e-01 -1.345839e+00 -2.924894e+00 -1.833229e-15 2.924894e+00 1.345839e+00 1.743838e-01 -2.845914e-01 -2.196387e+00 -4.773378e+00 -3.319815e-15 4.773378e+00 2.196387e+00 2.845914e-01 -1.743838e-01 -1.345839e+00 -2.924894e+00 -1.808032e-15 2.924894e+00 1.345839e+00 1.743838e-01 -3.096323e-01 -6.729196e-01 -2.656484e-16 6.729196e-01 3.096323e-01 -5.812793e-02 -1.472770e-18 5.812793e-02 
+9.211752e+00 1.415878e-14 -9.211752e+00 3.271239e+01 7.109340e+01 1.092654e-13 -7.109340e+01 -3.271239e+01 9.211752e+00 7.109340e+01 1.545063e+02 2.363366e-13 -1.545063e+02 -7.109340e+01 -9.211752e+00 -7.599850e-15 -6.129958e-14 -1.400849e-13 -5.444760e-15 1.438027e-13 6.932636e-14 9.325685e-15 -9.211752e+00 -7.109340e+01 -1.545063e+02 -2.440886e-13 1.545063e+02 7.109340e+01 9.211752e+00 -3.271239e+01 -7.109340e+01 -1.117939e-13 7.109340e+01 3.271239e+01 -9.211752e+00 -1.448444e-14 9.211752e+00 
+7.042523e-01 -3.779830e+00 7.042523e-01 2.481790e+01 2.977383e+00 -5.220349e+01 2.977383e+00 2.481790e+01 2.415174e+01 1.047676e+02 -5.557746e-01 -2.489335e+02 -5.557746e-01 1.047676e+02 2.415174e+01 3.926932e+01 1.692897e+02 -8.249409e+00 -4.182379e+02 -8.249409e+00 1.692897e+02 3.926932e+01 2.415174e+01 1.047676e+02 -5.557746e-01 -2.489335e+02 -5.557746e-01 1.047676e+02 2.415174e+01 2.481790e+01 2.977383e+00 -5.220349e+01 2.977383e+00 2.481790e+01 7.042523e-01 -3.779830e+00 7.042523e-01 
 RHS
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-1.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-2.000000e-02 1.051002e-09
-0.000000e+00 1.051002e-09
-2.000000e-04 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
-0.000000e+00 1.051002e-09
+1.137581e-10
+1.137581e-10
+1.137581e-10
+7.749416e-11
+7.749416e-11
+7.749416e-11
+7.749416e-11
+7.749416e-11
+3.937452e-11
+3.937452e-11
+3.937452e-11
+3.937452e-11
+3.937452e-11
+3.937452e-11
+3.937452e-11
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+0.000000e+00
+-4.000866e-11
+-4.000866e-11
+-4.000866e-11
+-4.000866e-11
+-4.000866e-11
+-4.000866e-11
+-4.000866e-11
+-8.002059e-11
+-8.002059e-11
+-8.002059e-11
+-8.002059e-11
+-8.002059e-11
+-1.194047e-10
+-1.194047e-10
+-1.194047e-10
 gWENO
 0.000000e+00
 0.000000e+00
@@ -828,51 +655,11 @@ gWENO
 0.000000e+00
 0.000000e+00
 0.000000e+00
-0.000000e+00
-0.000000e+00
-1.000000e+00
-0.000000e+00
-0.000000e+00
-2.000000e-02
-0.000000e+00
-2.000000e-04
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-0.000000e+00
-1.000000e+00
 Maximum Number of Neighbours 37
 My CheckVariable 0 and from GPU 15
 Total Number of Neighbours in LeftCounted Using GPU is 15
 Total Number of Neighbours in RightCounted Using GPU is 15
 Total Number of Neighbours in BottomCounted Using GPU is 15
 Total Number of Neighbours in TopCounted Using GPU is 15
-Total Number of Neighbours in FrontCounted Using GPU is 0
-Total Number of Neighbours in BackCounted Using GPU is 0
+Total Number of Neighbours in CenterCounted Using GPU is 0
+Total Number of Neighbours in TopCounted Using GPU is 0

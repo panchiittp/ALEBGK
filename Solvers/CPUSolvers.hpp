@@ -13,6 +13,7 @@ void CPUSolvers()
     updateVoxelNumberingCPU(dP, CalcParam, Domain, dvoxinfo);
     printallvoxel(dvoxinfo,CalcParam);
     findNeighborParticlesPeriodicCPU(dP, CalcParam, dvoxinfo,Domain);
+    SortNeighboursCPU(dP, CalcParam);
     std::cout << "updating neighbours are completed succesfully" << std::endl;
     printallparticleneigh(dP,CalcParam,"AllParticleInformation.dat");
     IdentifyNeighbourTypeCPU(dP, CalcParam,Domain);
@@ -49,11 +50,11 @@ void CPUSolvers()
     
         std::cout << "Working on MLS Method " << std::endl;
         
-        // for(int flag=0;flag<5;flag++)
-        // {    
-            int flag=4;
+        for(int flag=0;flag<5;flag++)
+        {    
+        //    int flag=myflag;
             ConstructCenterMMatrixCPU(dP, Param, CalcParam, Constant,Domain,flag);
-        // }
+        }
 
         
 

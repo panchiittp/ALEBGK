@@ -123,8 +123,8 @@ __global__ void GenerateVoxelNumberingKernel(BGKParticle *dP, CalcParameters Cal
     if (i < CalcParam.N)
     {
         //VoxelNumber(dP[i], CalcParam, Domain,voxinfo);
-        int row = min(9,(int)(floor((dP[i].y + 1e-10)/ 0.1)));
-        int col = min(9,(int)(floor((dP[i].x + 1e-10) / 0.1)));
+        int row = min(9,(int)(floor((dP[i].pos.y + 1e-10)/ 0.1)));
+        int col = min(9,(int)(floor((dP[i].pos.x + 1e-10) / 0.1)));
     
         dP[i].voxel = row * 10 + col;
     }
@@ -141,11 +141,12 @@ __global__ void updateVoxelNumberingKernel(BGKParticle *dP, CalcParameters CalcP
         __syncthreads();
         voxinfo[voxindex].particleindex[count] = i;
        
-        VoxelInformation(dP[i], CalcParam);
-        
+        VoxelInformation(dP[i], CalcParam);        
         // i += blockDim.x * gridDim.x;
     }
 }
+
+
 
 
 void GenerateVoxelNumberingCPU(BGKParticle *dP, CalcParameters CalcParam, DomainBoundary Domain, voxelDetails *voxinfo)
@@ -155,8 +156,8 @@ void GenerateVoxelNumberingCPU(BGKParticle *dP, CalcParameters CalcParam, Domain
     for(int i=0;i < CalcParam.N;i++)
     {
         //VoxelNumber(dP[i], CalcParam, Domain,voxinfo);
-        int row = min(9,(int)(floor((dP[i].y + 1e-10)/ 0.1)));
-        int col = min(9,(int)(floor((dP[i].x + 1e-10) / 0.1)));
+        int row = min(9,(int)(floor((dP[i].pos.y + 1e-10)/ 0.1)));
+        int col = min(9,(int)(floor((dP[i].pos.x + 1e-10) / 0.1)));
     
         dP[i].voxel = row * 10 + col;
     }

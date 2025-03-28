@@ -27,17 +27,22 @@ struct Properties
 
 struct BGKParticle
 {
-    double x, y, z, ux, uy, uz, T, rho;
+    double3 pos, vel;
+    double T, rho;
     bool boundary, validg, active;
     int voxel, totvoxel, totneigh; // Linear index of the voxel in the 2D grid in which the particle is residing
     int neighVoxel[27];            // neighbouring voxels
     int neighindex[50];
     int neightype[3*50];   //Each particle can be a neighbour of a particle in only 2 ways (maximum).
-    double M[6*50];
-    double W[50];
+    // double M[50*6];
+    // double W[50];
     double MTW[6*50];
-    double MTWM[21];
+    double MTWM[6*6];
+    double MTWMInv[6*6];
+    double MTWMInvMTW[5*6*50];
+    double Identity[6*6];
     double gWENO[5*6]; //First 6 for Center, next 6 for Left, then Right, Bottom, Top, Front, Back.
+    double gWENO2[5*6]; //First 6 for Center, next 6 for Left, then Right, Bottom, Top, Front, Back.
     double rhs[50];
     int neighcount[6];
     int checkvariable;
@@ -69,8 +74,8 @@ struct voxelDetails
 struct CSRMatrix
 {
     int numrow,numcol,nnz;
-    int *numPtr,*numCols;
+    int *Ptr,*Cols;
     double *vals;
-}
+};
 
 #endif
